@@ -1,3 +1,3 @@
-# Cornerstone Framework Guide Example
+# Cornerstone Framework Example
 
-Cornerstone Framework 가이드에서 사용되는 예제
+Cornerstone Framework 블로그, 이메일 및 가이드 등에서 사용되는 예제 모음
