@@ -1,0 +1,7 @@
+@import "fonts/lato/stylesheet.css";
+@import "fonts/nanum/stylesheet.css";
+
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: LatoWeb, NanumGothicWeb, Dotum, Arial, sans-serif;
+    font-weight: lighter;
+}
