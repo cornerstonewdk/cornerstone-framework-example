@@ -1,13 +1,66 @@
 // main.js
 define([
-    "jquery",
-    "backbone",
-    "multipage-router",
-    "bootstrap"
-], function ($, Backbone, MultipageRouter) {
+    'jquery',
+    'underscore',
+    'backbone',
+    'multipage-router',
+    'views/list',
+    'views/add',
+    'views/detail'
+], function ($, _, Backbone, MultipageRouter, ListView, AddView, DetailView) {
     return {
         launch: function () {
+            var listView = new ListView();
+            var addView = new AddView();
+            var detailView = new DetailView();
 
+            var MainRouter = MultipageRouter.extend({
+                pages: {
+                    'list-page': {
+                        fragment: [ '', 'list' ],
+                        el: '#list',
+                        render: function () {
+                            listView.render();
+                        },
+                        active: 'active',
+                        inactive: 'inactive'
+                    },
+                    'add-page': {
+                        fragment: 'add',
+                        el: '#add',
+                        render: function () {
+                            addView.render();
+                        },
+                        active: 'active',
+                        inactive: 'inactive'
+                    },
+                    'detail-page': {
+                        fragment: 'detail',
+                        el: '#detail',
+                        render: function (id) {
+                            detailView.render();
+                        },
+                        active: 'active',
+                        inactive: 'inactive'
+                    }
+                },
+                // 화면 전환 완료시 이벤트 처리를 위한 함수
+                active: function() {
+                    /**
+                     * 화면 전환이 완료되면 현재 Fragment Identifier 페이지를 제외하고 모두 Release 시킨다.
+                     */
+                    $('#pages > section').not(this.currentPage.el).empty();
+                },
+                // 화면 전환 실행 전 이벤트 처리를 위한 함수
+                inactive: function() {
+                    console.log(Backbone.history.fragment, 'inactive');
+                }
+            });
+
+            new MainRouter();
+
+            // Fragment identifier 의 변경을 감지하고 라우팅을 처리한다.
+            Backbone.history.start();
         }
     };
 });

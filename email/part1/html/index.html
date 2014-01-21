@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../cornerstone/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="../../../cornerstone/theme-white/cornerstone.css"/>
-    <link rel="stylesheet" href="../../../stylesheets/main.css"/>
+    <link rel="stylesheet" href="stylesheets/main.css"/>
     <link rel="stylesheet" href="../stylesheets/part1.css"/>
 </head>
 <body>
-<div class="container">
+<div id="pages" class="container">
     <section id="list" data-url="list" data-default-page="true">
         <a href="#add" class="btn btn-default" data-transition="slide">추가</a>
         <a href="#detail" class="btn btn-default" data-transition="flip" data-duration="1500">상세</a>
@@ -18,7 +18,7 @@
         <!-- START 샘플 리스트 -->
         <div class="media">
             <a class="pull-left" href="#">
-                <img src="../../../images/member-1.jpg" alt="" class="media-object img-circle img-member">
+                <img src="../images/member-1.jpg" alt="" class="media-object img-circle img-member">
             </a>
 
             <div class="media-body">
@@ -30,7 +30,7 @@
         </div>
         <div class="media">
             <a class="pull-left" href="#">
-                <img src="../../../images/member-1.jpg" alt="" class="media-object img-circle img-member">
+                <img src="../images/member-1.jpg" alt="" class="media-object img-circle img-member">
             </a>
 
             <div class="media-body">
@@ -42,7 +42,7 @@
         </div>
         <div class="media">
             <a class="pull-left" href="#" data-transition="flip">
-                <img src="../../../images/member-1.jpg" alt="" class="media-object img-circle img-member">
+                <img src="../images/member-1.jpg" alt="" class="media-object img-circle img-member">
             </a>
 
             <div class="media-body">
@@ -85,6 +85,7 @@
     <section id="detail" data-url="detail">
         <a href="#list" class="btn btn-default" data-transition="slide">목록</a>
         <a href="#add" class="btn btn-default" data-transition="slide">추가</a>
+
         <!-- START 샘플 상세 페이지 -->
         <div class="page-header">
             <h1>Media
@@ -134,12 +135,12 @@
     </section>
 </div>
 <!-- START 화면전환 필요 라이브러리 -->
-<script src="../../../cornerstone/jquery/jquery-1.10.2.min.js"></script>
-<script src="../../../cornerstone/transition/transition.js"></script>
-<script src="../../../cornerstone/underscore/underscore-min.js"></script>
-<script src="../../../cornerstone/backbone/backbone-min.js"></script>
-<script src="../../../cornerstone/multipage-router/multipage.js"></script>
-<script src="../../../cornerstone/multipage-router/multipage-starter.js"></script>
+<script src="cornerstone/jquery/jquery-1.10.2.min.js"></script>
+<script src="cornerstone/transition/transition.js"></script>
+<script src="cornerstone/underscore/underscore-min.js"></script>
+<script src="cornerstone/backbone/backbone-min.js"></script>
+<script src="cornerstone/multipage-router/multipage.js"></script>
+<script src="cornerstone/multipage-router/multipage-starter.js"></script>
 <!-- //END 화면전환 필요 라이브러리 -->
 </body>
 </html>
