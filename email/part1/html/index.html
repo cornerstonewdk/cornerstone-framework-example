@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cornerstone Framework Email Part1 HTML Example</title>
+    <link rel="stylesheet" href="../../../cornerstone/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../../cornerstone/theme-white/cornerstone.css"/>
+    <link rel="stylesheet" href="../../../style/main.css"/>
+</head>
+<body>
+<div class="container">
+    <section id="list-section" data-url="list" data-default-page="true">
+        <a href="#add" class="btn btn-default" data-transition="slide">추가</a>
+        <a href="#detail" class="btn btn-default" data-transition="flip" data-duration="1500">상세</a>
+        <img src="..." alt="..." class="img-rounded">
+        <img src="..." alt="..." class="img-rounded">
+    </section>
+    <section id="add-section" data-url="add" >
+        <a href="#list" class="btn btn-default" data-transition="slide">목록</a>
+        <a href="#detail" class="btn btn-default" data-transition="flip" data-duration="1500">상세</a>
+    </section>
+    <section id="detail-section" data-url="detail" >
+        <a href="#list" class="btn btn-default" data-transition="slide">목록</a>
+        <a href="#add" class="btn btn-default" data-transition="slide">추가</a>
+    </section>
+</div>
+<script src="../../../cornerstone/jquery/jquery-1.10.2.min.js"></script>
+<script src="../../../cornerstone/transition/transition.js"></script>
+<script src="../../../cornerstone/underscore/underscore-min.js"></script>
+<script src="../../../cornerstone/backbone/backbone-min.js"></script>
+<script src="../../../cornerstone/multipage-router/multipage.js"></script>
+<script src="../../../cornerstone/multipage-router/multipage-starter.js"></script>
+</body>
+</html>
