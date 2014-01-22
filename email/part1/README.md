@@ -3,6 +3,17 @@
 [Cornerstone Framework](https://github.com/cornerstonewdk/cornerstone-framework/tree/dev-2.0)에서는 화면 전환 기능을 쉽게 사용할 수 있는 기능을 제공합니다.
 
 ## 준비하기
+### STEP 1. 필요한 라이브러리 다운 받기
+이름 | 설명
+:-- | :--
+[jQuery]() | DOM 핸들링과 유용한 기능을 제공하는 jQuery 라이브러리
+[transition]() | 화면 전환 라이브러리
+[underscore]() | Functional Programming을 지원해 Collection/Array의 제어를 쉽고, Backbone.js 사용을 위해 필요한 라이브러리
+[backbone]() | Backbone MVC 프레임워크 라이브러리
+[multipage]() | Backbone Route를 확장해서 Cornerstone Framework의 화면 전환 기능을 추가시킨 Routing 라이브러리
+[multipage-starter]() | 자동적으로 multipage를 실행하기 위한 라이브러리
+
+### STEP 2. 조건 갖추기
 화면 전환 효과를 사용하기 전에 몇 가지 조건을 갖춰야 합니다.
 
 1. SPA(Single Page Application) 내에 2개 이상의 페이지 영역이 존재해야 합니다.
@@ -10,63 +21,17 @@
 3. 페이지마다 매핑되는 Fragment identifier가 존재해야 하며, Fragment identifier가 변경되면 그에 맞는 페이지가 표시돼야 합니다.
 4. 페이지가 전환 될 때마다 효과가 필요합니다.
 
-*코드 1-1* 화면 전환 - [기본 구조 구성]()
-```
-<div class="container">
-    <section id="list"></section>
-    <section id="add"></section>
-    <section id="detail"></section>
-</div>
-```
+### STEP 3. 샘플 HTML 
+화면 전환 효과를 보여주기 위해 필요한 페이지의 HTML Snippet을 준비합니다.
 
-*코드 1-2* 화면 전환 - [목록 페이지]()
-```
-<!-- START 샘플 리스트 -->
-<div class="media">
-    <a class="pull-left" href="#">
-        <img src="images/member-1.jpg" alt="" class="media-object img-circle img-member">
-    </a>
+***코드 1-1*** [기본 구조 구성]()
 
-    <div class="media-body">
-        <h4 class="media-heading">Media heading</h4>
-        Lorem ipsum …
-    </div>
-</div>
-…
-<!-- //END 샘플 리스트 -->
-```
+***코드 1-2*** [목록 페이지]()
 
-*코드 1-3* 화면 전환 -  [추가 페이지]()
-```
-<!-- START 샘플 추가 Form -->
-<form class="form-horizontal">
-    <div class="form-group">
-        <label for="inputUsername1" class="col-lg-2 control-label">Username</label>
+***코드 1-3*** [추가 페이지]()
 
-        <div class="col-lg-10">
-            <input type="username" class="form-control" id="inputUsername1" placeholder="Username">
-        </div>
-    </div>
-	…
-</form>
-<!-- //END 샘플 추가 Form -->
-```
+***코드 1-4*** [상세 페이지]()
 
-*코드 1-4* 화면 전환 -  [상세 페이지]()
-```
-<!-- START 샘플 상세 페이지 -->
-<div class="page-header">
-    <h1>Media
-        <small>heading</small>
-    </h1>
-    …
-    <blockquote class="pull-right">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-        <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
-    </blockquote>
-</div>
-<!-- //END 샘플 상세 페이지 -->
-```
 
 ## 2-1. HTML 태그를 이용한 화면 전환 구현 방법
 
@@ -144,7 +109,7 @@ HTML 태그를 이용한 방식은 앞의 *코드 1-1*에서 몇 가지 속성�
 - [Part1-HTML 태그 방식 소스](https://github.com/cornerstonewdk/cornerstone-framework-example/blob/email-part1/email/part1/html/index.html)
 - [Part1-HTML 태그 방식 미리 보기](http://cornerstonewdk.github.io/cornerstone-framework-example/email/part1/html/index.html)
 
-> HTML 태그 방식의 경우 간단히 적용하기는 쉽지만 규모가 작지 않은 환경에서는 HTML 태그 방식은 여러가지 문제를 야기할 수 있습니다.
+> HTML 태그 방식만으로 구현하는 방식은 쉽긴 하지만 아래와 같은 기능을 구현할 순 없다.
 >
 1. 화면 전환 이벤트 핸들링을 할 수 없다.
 2. 비활성화 페이지 영역을 Release 시킬 수 없다.
