@@ -10,10 +10,16 @@ define([
 ], function ($, _, Backbone, MultipageRouter, ListView, AddView, DetailView) {
     return {
         launch: function () {
+            /**
+             * View 객체 생성
+             */
             var listView = new ListView();
             var addView = new AddView();
             var detailView = new DetailView();
 
+            /**
+             * Multipagerouter 정의
+             */
             var MainRouter = MultipageRouter.extend({
                 pages: {
                     'list-page': {
@@ -44,14 +50,18 @@ define([
                         inactive: 'inactive'
                     }
                 },
-                // 화면 전환 완료시 이벤트 처리를 위한 함수
+                /**
+                 * 화면 전환 완료시 이벤트 처리를 위한 함수
+                 */
                 active: function() {
                     /**
                      * 화면 전환이 완료되면 현재 Fragment Identifier 페이지를 제외하고 모두 Release 시킨다.
                      */
                     $('#pages > section').not(this.currentPage.el).empty();
                 },
-                // 화면 전환 실행 전 이벤트 처리를 위한 함수
+                /**
+                 * 화면 전환 실행 전 이벤트 처리를 위한 함수
+                 */
                 inactive: function() {
                     console.log(Backbone.history.fragment, 'inactive');
                 }
