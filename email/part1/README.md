@@ -31,37 +31,37 @@
 
 
 <table cellspacing="0" cellpadding="0" border="0" style="border: none;">
-                                                <tbody>
-                                                <tr>
-                                                    <td style="border-top: none; text-align: center;">
-                                                        <p><strong><em>코드 1-2</em></strong> <a target="_blank"  
-                                                                                               href="https://gist.github.com/WoosubKim/9f85a6695750223d5051/raw/1c6c3feac60682b4a0a09281b7a5ba78a56692f5/layout.template">목록
-                                                            페이지</a></span>
-                                                        </p>
-                                                        <img alt="" width="170"
-                                                             src="https://dl.dropboxusercontent.com/u/47146499/blogs/cornerstone/images/email/part1/page_list.png">
-                                                    </td>
-                                                    <td style="border-top: none; text-align: center;">
+    <tbody>
+    <tr>
+        <td style="border-top: none; text-align: center;">
+            <p><strong><em>코드 1-2</em></strong> <a target="_blank"
+                                                   href="https://gist.github.com/WoosubKim/9f85a6695750223d5051/raw/1c6c3feac60682b4a0a09281b7a5ba78a56692f5/layout.template">목록
+                페이지</a></span>
+            </p>
+            <img alt="" width="170"
+                 src="https://dl.dropboxusercontent.com/u/47146499/blogs/cornerstone/images/email/part1/page_list.png">
+        </td>
+        <td style="border-top: none; text-align: center;">
 
-                                                        <p><strong><em>코드 1-3</em></strong> <a target="_blank"  
-                                                                                               href="https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part1/email/part1/mvc/app/views/add.template">추가
-                                                            페이지</a></span>
-                                                        </p>
-                                                        <img alt="" width="170"
-                                                             src="https://dl.dropboxusercontent.com/u/47146499/blogs/cornerstone/images/email/part1/page_add.png">
-                                                    </td>
-                                                    <td style="border-top: none; text-align: center;">
-                                                        <p><strong><em>코드 1-4</em></strong> <a target="_blank" 
-                                                                href="https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part1/email/part1/mvc/app/views/detail.template">상세
-                                                            페이지</a></span></div></p>
+            <p><strong><em>코드 1-3</em></strong> <a target="_blank"
+                                                   href="https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part1/email/part1/mvc/app/views/add.template">추가
+                페이지</a></span>
+            </p>
+            <img alt="" width="170"
+                 src="https://dl.dropboxusercontent.com/u/47146499/blogs/cornerstone/images/email/part1/page_add.png">
+        </td>
+        <td style="border-top: none; text-align: center;">
+            <p><strong><em>코드 1-4</em></strong> <a target="_blank"
+                    href="https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part1/email/part1/mvc/app/views/detail.template">상세
+                페이지</a></span></div></p>
 
-                                                        <img width="170"
-                                                             src="https://dl.dropboxusercontent.com/u/47146499/blogs/cornerstone/images/email/part1/page_detail.png"
-                                                             alt="">
-                                                    </td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
+            <img width="170"
+                 src="https://dl.dropboxusercontent.com/u/47146499/blogs/cornerstone/images/email/part1/page_detail.png"
+                 alt="">
+        </td>
+    </tr>
+    </tbody>
+</table>
 
 
 ## 2. HTML 태그를 이용한 화면 전환 구현 방법
@@ -302,23 +302,23 @@ active: function() {
 > 적극 지원하겠습니다
 
 <table cellspacing="0" cellpadding="0" border="0" style="border: none;">
-                                                <tbody><tr>
-                                                    <td style="border-top: none; text-align: center;">
-                                                        <p><strong>Github Cornerstone Framework</strong></p>
-                                                        <a target="_blank" href="https://github.com/cornerstonewdk/cornerstone-framework/issues?state=open">
-                                                            <img alt="" width="100"
-                                                                 src="http://dl.dropboxusercontent.com/u/47146499/blogs/cornerstone/images/email/Octocat.png">
-                                                        </a>
-                                                    </td>
-                                                    <td style="border-top: none; text-align: center;">
-                                                        <p><strong>Facebook CornerstoneWDK</strong></p>
-                                                        <a target="_blank" href="https://www.facebook.com/groups/cornerstonewdk/">
-                                                            <img alt="" width="70"
-                                                                 src="http://dl.dropboxusercontent.com/u/47146499/blogs/cornerstone/images/email/FB-f-Logo__blue_100.png" >
-                                                        </a>
-                                                    </td>
-                                                </tr></tbody>
-                                            </table>
+    <tbody><tr>
+        <td style="border-top: none; text-align: center;">
+            <p><strong>Github Cornerstone Framework</strong></p>
+            <a target="_blank" href="https://github.com/cornerstonewdk/cornerstone-framework/issues?state=open">
+                <img alt="" width="100"
+                     src="http://dl.dropboxusercontent.com/u/47146499/blogs/cornerstone/images/email/Octocat.png">
+            </a>
+        </td>
+        <td style="border-top: none; text-align: center;">
+            <p><strong>Facebook CornerstoneWDK</strong></p>
+            <a target="_blank" href="https://www.facebook.com/groups/cornerstonewdk/">
+                <img alt="" width="70"
+                     src="http://dl.dropboxusercontent.com/u/47146499/blogs/cornerstone/images/email/FB-f-Logo__blue_100.png" >
+            </a>
+        </td>
+    </tr></tbody>
+</table>
 
 
 
