@@ -1,5 +1,9 @@
+body {
+    padding-top: 15px;
+}
+
 .btn-lg {
-    margin: 50px 20px 50px 20px;
+    margin: 50px 20px;
     padding: 20px;
     font-size: 30px;
     font-weight: 200;
