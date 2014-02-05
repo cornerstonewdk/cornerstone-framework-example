@@ -4,7 +4,7 @@
 
 ## 1. 준비하기
 ### STEP 1. 필요한 라이브러리 다운 받기
-이름 | HTML | MVC | 설명
+이름 | HTML 구현방식 | MVC 구현방식 | 설명
 :-- | :--: | :--: | :--
 [jquery](https://raw.github.com/cornerstonewdk/cornerstone-framework/dev-2.0/dist/lib/jquery/jquery-1.10.2.min.js) | O | O | DOM 핸들링과 유용한 기능을 제공하는 jQuery 라이브러리
 [transition](https://raw.github.com/cornerstonewdk/cornerstone-framework/dev-2.0/dist/src/util/transition/transition.js) | O | O | 화면 전환 라이브러리
@@ -31,34 +31,37 @@
 
 
 <table cellspacing="0" cellpadding="0" border="0" style="border: none;">
-    <td style="border-top: none; text-align: center;">
-    <p><strong><em>코드 1-2</em></strong> <a target="_blank"
-                                              href="https://gist.github.com/WoosubKim/9f85a6695750223d5051/raw/1c6c3feac60682b4a0a09281b7a5ba78a56692f5/layout.template">목록
-        페이지</a></span>
-</p>
-        <img alt="" width="170"
-             src="https://dl.dropboxusercontent.com/u/47146499/blogs/cornerstone/images/email/part1/page_list.png">
-    </td>
-    <td style="border-top: none; text-align: center;">
+                                                <tbody>
+                                                <tr>
+                                                    <td style="border-top: none; text-align: center;">
+                                                        <p><strong><em>코드 1-2</em></strong> <a target="_blank"  
+                                                                                               href="https://gist.github.com/WoosubKim/9f85a6695750223d5051/raw/1c6c3feac60682b4a0a09281b7a5ba78a56692f5/layout.template">목록
+                                                            페이지</a></span>
+                                                        </p>
+                                                        <img alt="" width="170"
+                                                             src="https://dl.dropboxusercontent.com/u/47146499/blogs/cornerstone/images/email/part1/page_list.png">
+                                                    </td>
+                                                    <td style="border-top: none; text-align: center;">
 
-        <p><strong><em>코드 1-3</em></strong> <a target="_blank"
-                                              href="https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part1/email/part1/mvc/app/views/add.template">추가
-        페이지</a></span>
-</p>
-        <img alt="" width="170"
-             src="https://dl.dropboxusercontent.com/u/47146499/blogs/cornerstone/images/email/part1/page_add.png">
-    </td>
-    <td style="border-top: none; text-align: center;">
-        <p><strong><em>코드 1-4</em></strong> <a
-            href="https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part1/email/part1/mvc/app/views/detail.template">상세
-        페이지</a></span></div></p>
+                                                        <p><strong><em>코드 1-3</em></strong> <a target="_blank"  
+                                                                                               href="https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part1/email/part1/mvc/app/views/add.template">추가
+                                                            페이지</a></span>
+                                                        </p>
+                                                        <img alt="" width="170"
+                                                             src="https://dl.dropboxusercontent.com/u/47146499/blogs/cornerstone/images/email/part1/page_add.png">
+                                                    </td>
+                                                    <td style="border-top: none; text-align: center;">
+                                                        <p><strong><em>코드 1-4</em></strong> <a target="_blank" 
+                                                                href="https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part1/email/part1/mvc/app/views/detail.template">상세
+                                                            페이지</a></span></div></p>
 
-        <img width="170"
-             src="https://dl.dropboxusercontent.com/u/47146499/blogs/cornerstone/images/email/part1/page_detail.png"
-             alt="">
-    </td>
-    </tr></tbody>
-</table>
+                                                        <img width="170"
+                                                             src="https://dl.dropboxusercontent.com/u/47146499/blogs/cornerstone/images/email/part1/page_detail.png"
+                                                             alt="">
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
 
 
 ## 2. HTML 태그를 이용한 화면 전환 구현 방법
@@ -148,6 +151,8 @@ HTML 방식에서 한 파일에 모든 페이지를 넣은 상태를 MVC 방식�
 
 목록 페이지를 View로 생성하기 위해 ***코드 1-2*** 를 다운 받고 `list.template`이라는 파일로 생성합니다.
 
+[Livedoc에서 Template 자세히 보기](http://cornerstone.sktelecom.com/2/livedoc/#10)
+
 ***코드 3-1*** | [목록 Template 생성](https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part1/email/part1/mvc/app/views/list.template)
 ```
 <a href="#add" class="btn btn-default" data-transition="slide">Add</a>
@@ -162,6 +167,10 @@ HTML 방식에서 한 파일에 모든 페이지를 넣은 상태를 MVC 방식�
 ```
 
 그리고 `list.js`라는 자바스크립트 파일을 생성하고 목록 페이지에 대한 View를 생성합니다. 생성할 때 이 전에 생성한 `list.template`를 AMD 방식을 이용해 모듈화된 객체로 가져올 수 있습니다.
+
+[Livedoc에서 View 자세히 보기](http://cornerstone.sktelecom.com/2/livedoc/#8)
+
+[Livedoc에서 스타일의 동적 로딩 자세히 보기](http://cornerstone.sktelecom.com/2/livedoc/#11)
 
 ***코드 3-2*** | [목록 View 생성](https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part1/email/part1/mvc/app/views/list.js)
 ```
@@ -194,6 +203,8 @@ define([
 
 ### STEP 8. MultipageRouter 정의하기
 화면 전환 효과를 지원하는 Multipagerouter를 이용해서 Router 기능을 구현할 수 있습니다. 
+
+[Livedoc에서 라우팅 자세히 보기](http://cornerstone.sktelecom.com/2/livedoc/#14)
 
 ***코드 3-7*** | [MultipageRouter 생성](https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part1/email/part1/mvc/app/main.js)
 ``` 
@@ -283,6 +294,31 @@ active: function() {
 
 - [Part1-MVC Framework 방식 소스](https://github.com/cornerstonewdk/cornerstone-framework-example/blob/email-part1/email/part1/mvc/index.html)
 - [Part1-MVC Framework 미리 보기](http://cornerstonewdk.github.io/cornerstone-framework-example/email/part1/mvc/index.html)
+
+
+### 문의하기
+> HTML5 웹앱 개발의 Best Practice에 관해 코너스톤 개발팀에 문의해주세요. 
+
+> 적극 지원하겠습니다
+
+<table cellspacing="0" cellpadding="0" border="0" style="border: none;">
+                                                <tbody><tr>
+                                                    <td style="border-top: none; text-align: center;">
+                                                        <p><strong>Github Cornerstone Framework</strong></p>
+                                                        <a target="_blank" href="https://github.com/cornerstonewdk/cornerstone-framework/issues?state=open">
+                                                            <img alt="" width="100"
+                                                                 src="http://dl.dropboxusercontent.com/u/47146499/blogs/cornerstone/images/email/Octocat.png">
+                                                        </a>
+                                                    </td>
+                                                    <td style="border-top: none; text-align: center;">
+                                                        <p><strong>Facebook CornerstoneWDK</strong></p>
+                                                        <a target="_blank" href="https://www.facebook.com/groups/cornerstonewdk/">
+                                                            <img alt="" width="70"
+                                                                 src="http://dl.dropboxusercontent.com/u/47146499/blogs/cornerstone/images/email/FB-f-Logo__blue_100.png" >
+                                                        </a>
+                                                    </td>
+                                                </tr></tbody>
+                                            </table>
 
 
 
