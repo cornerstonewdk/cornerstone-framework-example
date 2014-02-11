@@ -1,0 +1,24 @@
+body {
+    padding-top: 15px;
+}
+
+.btn-lg {
+    margin: 50px 20px;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: 200;
+}
+
+.description {
+    font-size: 16px;
+    font-style: italic;
+}
+
+.img-member {
+    width: 100px;
+    height: 100px;
+}
+
+.media, .form-horizontal {
+    margin-top: 50px;
+}
