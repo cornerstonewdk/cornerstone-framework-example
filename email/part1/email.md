@@ -5,13 +5,14 @@
 <table cellspacing="0" cellpadding="0" border="0" style="border: none;">
     <tbody><tr>
         <td style="border-top: none; text-align: center;">
-            <a href="http://cornerstone.sktelecom.com/2/page-transition/index-nested.html">
-                <img alt="" width="300"
-                     src="https://dl.dropboxusercontent.com/u/47146499/Blogs/Cornerstone/images/email/part1/CornerstoneEmailPart1-1.gif">
+            <a href="http://cornerstonewdk.github.io/cornerstone-framework-example/email/part1/html/index.html">
+                <img alt="" width="240"
+                     src="https://31.media.tumblr.com/0e31e6729096f6a9f960f38e0eb1d623/tumblr_inline_n0thzgQuvT1rc9vvo.gif">
             </a>
         </td>
     </tr></tbody>
 </table>
+
 
 ## 화면 전환을 직접 만들어 보기
 ### 1. 샘플 HTML 준비
@@ -38,7 +39,7 @@
                 페이지</a></span>
             </p>
             <img alt="" width="170"
-                 src="https://dl.dropboxusercontent.com/u/47146499/blogs/cornerstone/images/email/part1/page_list.png">
+                 src="https://31.media.tumblr.com/74936e77231a356f82ed3d9a7e118c5a/tumblr_inline_n0thskkS8e1rc9vvo.png">
         </td>
         <td style="border-top: none; text-align: center;">
 
@@ -47,7 +48,7 @@
                 페이지</a></span>
             </p>
             <img alt="" width="170"
-                 src="https://dl.dropboxusercontent.com/u/47146499/blogs/cornerstone/images/email/part1/page_add.png">
+                 src="https://31.media.tumblr.com/e0d9717c374a8023d7ee2b899f3908f5/tumblr_inline_n0ths9oefA1rc9vvo.png">
         </td>
         <td style="border-top: none; text-align: center;">
             <p><strong><em>코드 1-4</em></strong> <a  
@@ -55,7 +56,7 @@
                 페이지</a></span></div></p>
 
             <img width="170"
-                 src="https://dl.dropboxusercontent.com/u/47146499/blogs/cornerstone/images/email/part1/page_detail.png"
+                 src="https://31.media.tumblr.com/26badbbb461bad1f0af6edff778b6bfd/tumblr_inline_n0thsfAcpg1rc9vvo.png"
                  alt="">
         </td>
     </tr>
@@ -75,10 +76,10 @@ HTML 태그를 이용한 방식은 앞의 ***코드 1-1***에서 몇 가지 속�
 </div>
 ```
 
-※ Data-API 설명
+※ **Data-API** 설명
 
-- data-url: 화면 전환 시 페이지의 Fragment Identifier를 지정하는 속성
-- data-default-page: 기본 페이지를 지정하는 속성
+- **data-url**: 화면 전환 시 페이지의 Fragment Identifier를 지정하는 속성
+- **data-default-page**: 기본 페이지를 지정하는 속성
 
 
 ### 3. 필요한 라이브러리를 추가
@@ -129,20 +130,6 @@ HTML 태그를 이용한 방식은 앞의 ***코드 1-1***에서 몇 가지 속�
 3. 비활성화 페이지 영역을 Release 시킬 수 없다.
 
 위와 같은 문제를 해결하기 위해 Cornerstone Framework에서는 MVC 방식을 제공하고, MVC 방식을 사용하는 것을 지향하고 있습니다. [자세히보기](http://cornerstonewdk.github.io/cornerstone-framework-example/email/part1/part1.html)
-
-### 데모
-
-<table cellspacing="0" cellpadding="0" border="0" style="border: none;">
-    <tbody><tr>
-        <td style="border-top: none; text-align: center;">
-            <a href="http://cornerstonewdk.github.io/cornerstone-framework-example/email/part1/html/index.html">
-                <img alt="" width="300"
-                     src="https://dl.dropboxusercontent.com/u/47146499/Blogs/Cornerstone/images/email/part1/CornerstoneEmailPart1-2.gif">
-            </a>
-        </td>
-    </tr></tbody>
-</table>
-
 
 ### 문의하기
 > HTML5 웹앱 개발의 Best Practice에 관해 코너스톤 개발팀에 문의해주세요. 
