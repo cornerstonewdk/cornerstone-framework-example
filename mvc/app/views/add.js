@@ -2,13 +2,11 @@
 define([
     'jquery',
     'underscore',
-    'backbone',
-    'template!./add'
-], function ($, _, Backbone, Template) {
+    'backbone'
+], function ($, _, Backbone) {
     return Backbone.View.extend({
         el: '#add',
         render: function() {
-            this.$el.html(Template());
         }
     });
 });
