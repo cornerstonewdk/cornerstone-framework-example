@@ -1,0 +1,15 @@
+body {
+    padding-top: 55px;
+    padding-bottom: 70px;
+}
+
+/* 상단 메뉴의 브랜드 이름 위치를 center로 변경 */
+.navbar-header {
+    float: left;
+    text-align: center;
+    width: 100%;
+}
+.navbar-brand {
+    display: inline-block;
+    float:none;
+}
