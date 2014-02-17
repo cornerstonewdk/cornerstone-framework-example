@@ -5,15 +5,23 @@
 <table cellspacing="0" cellpadding="0" border="0" style="border: none;">
     <tbody><tr>
         <td style="border-top: none; text-align: center;">
-            <a href="http://cornerstone.sktelecom.com/2/page-transition/index-nested.html">
-                <img alt="" width="300"
-                     src="https://dl.dropboxusercontent.com/u/47146499/Blogs/Cornerstone/images/email/part1/CornerstoneEmailPart1-1.gif">
+            <a href="http://cornerstonewdk.github.io/cornerstone-framework-example/email/part1/html/index.html">
+                <img alt="" width="240"
+                     src="https://31.media.tumblr.com/0e31e6729096f6a9f960f38e0eb1d623/tumblr_inline_n0thzgQuvT1rc9vvo.gif">
             </a>
         </td>
     </tr></tbody>
 </table>
 
+
 ## 화면 전환을 직접 만들어 보기
+아래 예제를 시작하기 위한 샘플 파일을 아래 링크를 통해 다운받을 수 있습니다. 다운로드 받은 소스를 통해 아래 등장하는 코드를 추가하면서 화면 전환 예제를 점진적으로
+완성해 나갈 수 있습니다.
+
+
+- [화면 전환 예제 소스](https://github.com/cornerstonewdk/cornerstone-framework-example/archive/email-part1-incomplete.zip)
+
+
 ### 1. 샘플 HTML 준비
 화면 전환 효과를 보여주기 위해 필요한 페이지의 HTML Snippet을 준비합니다.
 
@@ -34,11 +42,11 @@
     <tr>
         <td style="border-top: none; text-align: center;">
             <p><strong><em>코드 1-2</em></strong> <a 
-                                                   href="https://gist.github.com/WoosubKim/9f85a6695750223d5051/raw/1c6c3feac60682b4a0a09281b7a5ba78a56692f5/layout.template">목록
+                                                   href="https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part1/email/part1/mvc/app/views/list.template">목록
                 페이지</a></span>
             </p>
             <img alt="" width="170"
-                 src="https://dl.dropboxusercontent.com/u/47146499/blogs/cornerstone/images/email/part1/page_list.png">
+                 src="https://31.media.tumblr.com/74936e77231a356f82ed3d9a7e118c5a/tumblr_inline_n0thskkS8e1rc9vvo.png">
         </td>
         <td style="border-top: none; text-align: center;">
 
@@ -47,7 +55,7 @@
                 페이지</a></span>
             </p>
             <img alt="" width="170"
-                 src="https://dl.dropboxusercontent.com/u/47146499/blogs/cornerstone/images/email/part1/page_add.png">
+                 src="https://31.media.tumblr.com/e0d9717c374a8023d7ee2b899f3908f5/tumblr_inline_n0ths9oefA1rc9vvo.png">
         </td>
         <td style="border-top: none; text-align: center;">
             <p><strong><em>코드 1-4</em></strong> <a  
@@ -55,7 +63,7 @@
                 페이지</a></span></div></p>
 
             <img width="170"
-                 src="https://dl.dropboxusercontent.com/u/47146499/blogs/cornerstone/images/email/part1/page_detail.png"
+                 src="https://31.media.tumblr.com/26badbbb461bad1f0af6edff778b6bfd/tumblr_inline_n0thsfAcpg1rc9vvo.png"
                  alt="">
         </td>
     </tr>
@@ -75,10 +83,10 @@ HTML 태그를 이용한 방식은 앞의 ***코드 1-1***에서 몇 가지 속�
 </div>
 ```
 
-※ Data-API 설명
+※ **Data-API** 설명
 
-- data-url: 화면 전환 시 페이지의 Fragment Identifier를 지정하는 속성
-- data-default-page: 기본 페이지를 지정하는 속성
+- **data-url**: 화면 전환 시 페이지의 Fragment Identifier를 지정하는 속성
+- **data-default-page**: 기본 페이지를 지정하는 속성
 
 
 ### 3. 필요한 라이브러리를 추가
@@ -130,19 +138,8 @@ HTML 태그를 이용한 방식은 앞의 ***코드 1-1***에서 몇 가지 속�
 
 위와 같은 문제를 해결하기 위해 Cornerstone Framework에서는 MVC 방식을 제공하고, MVC 방식을 사용하는 것을 지향하고 있습니다. [자세히보기](http://cornerstonewdk.github.io/cornerstone-framework-example/email/part1/part1.html)
 
-### 데모
-
-<table cellspacing="0" cellpadding="0" border="0" style="border: none;">
-    <tbody><tr>
-        <td style="border-top: none; text-align: center;">
-            <a href="http://cornerstonewdk.github.io/cornerstone-framework-example/email/part1/html/index.html">
-                <img alt="" width="300"
-                     src="https://dl.dropboxusercontent.com/u/47146499/Blogs/Cornerstone/images/email/part1/CornerstoneEmailPart1-2.gif">
-            </a>
-        </td>
-    </tr></tbody>
-</table>
-
+화면 전환 샘플을 완성해 가면서 막히는 부분은 아래 완성 샘플과 비교해가면서 해결 점을 찾을 수 있습니다.
+- [화면 전환 예제 완성 소스](https://github.com/cornerstonewdk/cornerstone-framework-example/archive/email-part1-complete.zip)
 
 ### 문의하기
 > HTML5 웹앱 개발의 Best Practice에 관해 코너스톤 개발팀에 문의해주세요. 
@@ -155,14 +152,14 @@ HTML 태그를 이용한 방식은 앞의 ***코드 1-1***에서 몇 가지 속�
             <p><strong>Github Cornerstone Framework</strong></p>
             <a href="https://github.com/cornerstonewdk/cornerstone-framework/issues?state=open">
                 <img alt="" width="100"
-                     src="http://dl.dropboxusercontent.com/u/47146499/blogs/cornerstone/images/email/Octocat.png">
+                     src="https://31.media.tumblr.com/2a20d1e0d0d8d3f175bbd16e09e823e9/tumblr_inline_n0thrltYIu1rc9vvo.png">
             </a>
         </td>
         <td style="border-top: none; text-align: center;">
             <p><strong>Facebook CornerstoneWDK</strong></p>
             <a href="https://www.facebook.com/groups/cornerstonewdk/">
                 <img alt="" width="70"
-                     src="http://dl.dropboxusercontent.com/u/47146499/blogs/cornerstone/images/email/FB-f-Logo__blue_100.png" >
+                     src="https://31.media.tumblr.com/299b61ea20104ceedd5517740298dc46/tumblr_inline_n0thriaGJp1rc9vvo.png" >
             </a>
         </td>
     </tr></tbody>

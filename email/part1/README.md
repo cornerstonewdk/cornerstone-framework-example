@@ -53,7 +53,7 @@
         <td style="border-top: none; text-align: center;">
             <p><strong><em>코드 1-4</em></strong> <a target="_blank"
                     href="https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part1/email/part1/mvc/app/views/detail.template">상세
-                페이지</a></span></div></p>
+                페이지</a></span></p>
 
             <img width="170"
                  src="https://dl.dropboxusercontent.com/u/47146499/blogs/cornerstone/images/email/part1/page_detail.png"
