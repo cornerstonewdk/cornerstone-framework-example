@@ -5,7 +5,7 @@
 <table cellspacing="0" cellpadding="0" border="0" style="border: none;">
     <tbody><tr>
         <td style="border-top: none; text-align: center;">
-            <a href="http://cornerstonewdk.github.io/cornerstone-framework-example/email/part1/html/index.html">
+            <a href="http://cornerstonewdk.github.io/cornerstone-framework-example/email/part2/html/index.html">
                 <img alt="" width="320"
                  src="https://dl.dropboxusercontent.com/u/47146499/Blogs/Cornerstone/images/email/part2/part2.png"> 
             </a>
@@ -22,7 +22,7 @@
 ### 1. 기본 HTML 준비
 상/하단 메뉴 구성을 위한 HTML를 준비합니다.
 
-***코드 1-1*** | [기본 HTML]()
+***코드 1-1*** | [기본 HTML](https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part2-incomplete/index.html)
 ```
 <!DOCTYPE html>
 <html lang="ko">
@@ -45,7 +45,7 @@
 ```
 
 ### 2. 상/하단 메뉴 HTML 추가하기
-상/하단 메뉴 구성을 위해 Cornerstone Framework의 Component 중 [**네비게이션 바**]()와 [**모바일 Navbar**]()를 활용해서 만들 수 있습니다. 기본 HTML의 `<div id="pages" class="container"></div>` 엘리먼트안에 ***코드 1-2***, ***코드 1-3*** 소스를 추가합니다.
+상/하단 메뉴 구성을 위해 Cornerstone Framework의 Component 중 [**네비게이션 바**](http://cornerstone.sktelecom.com/2/livedoc/#4207)와 [**모바일 Navbar**](http://cornerstone.sktelecom.com/2/livedoc/#4221)를 활용해서 만들 수 있습니다. 기본 HTML의 `<div id="pages" class="container"></div>` 엘리먼트안에 ***코드 1-2***, ***코드 1-3*** 소스를 추가합니다.
 
 <table cellspacing="0" cellpadding="0" border="0" style="border: none;">
     <tbody>
