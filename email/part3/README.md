@@ -1,6 +1,6 @@
 # Part 3. 차트가 필요하신가요?
 
-[Cornerstone Framework](https://github.com/cornerstonewdk/cornerstone-framework/tree/dev-2.0)에서는 아래와 같이 데이터를 차트로 표현할 수 있는 Widget을 제공합니다.
+[Cornerstone Framework](https://github.com/cornerstonewdk/cornerstone-framework/tree/dev-2.0)에서는 데이터를 차트로 표현할 수 있는 Widget을 제공합니다.
 
 <table cellspacing="0" cellpadding="0" border="0" style="border: none; width: 100%;">
     <tbody>
@@ -13,6 +13,69 @@
             </td>
         </tr>
     </tbody>
+</table>
+
+그리고 아래와 같은 다양한 종류의 차트를 표현 할 수 있습니다.
+
+#### [차트 종류 (chartType)](http://cornerstone.sktelecom.com/2/livedoc/#4405)
+
+<table class="table table-striped table-hover table-responsive table-bordered">
+<thead>
+<tr>
+<th align="left">옵션명</th>
+<th align="left">설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">bar</td>
+<td align="left">수직 바 차트(스택 + 그룹 토글)</td>
+</tr>
+<tr>
+<td align="left">stackedBar</td>
+<td align="left">스택 바 차트</td>
+</tr>
+<tr>
+<td align="left">groupedBar</td>
+<td align="left">그룹 바 차트</td>
+</tr>
+<tr>
+<td align="left">line</td>
+<td align="left">라인 차트</td>
+</tr>
+<tr>
+<td align="left">pie</td>
+<td align="left">파이 차트</td>
+</tr>
+<tr>
+<td align="left">horizontalBar</td>
+<td align="left">수평 바 차트(스택 + 그룹 토글)</td>
+</tr>
+<tr>
+<td align="left">stackedHorizontalBar</td>
+<td align="left">스택 수평 바 차트</td>
+</tr>
+<tr>
+<td align="left">groupedHorizontalBar</td>
+<td align="left">그룹 수평 바 차트</td>
+</tr>
+<tr>
+<td align="left">linePlusBar</td>
+<td align="left">라인 + 바 차트</td>
+</tr>
+<tr>
+<td align="left">lineFocus</td>
+<td align="left">라인 포커스 차트 (라인 차트 하단에 네비게이션 기능을 하는 라인 차트가 추가된다.)</td>
+</tr>
+<tr>
+<td align="left">bar3d</td>
+<td align="left">수직 3D 바 차트</td>
+</tr>
+<tr>
+<td align="left">horizontalBar3d</td>
+<td align="left">수평 3D 바 차트</td>
+</tr>
+</tbody>
 </table>
 
 
@@ -91,67 +154,6 @@ $.ajax({
     }
 });
 ```
-
-#### [차트 종류 (chartType)](http://cornerstone.sktelecom.com/2/livedoc/#4405)
-
-<table class="table table-striped table-hover table-responsive table-bordered">
-<thead>
-<tr>
-<th align="left">옵션명</th>
-<th align="left">설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">bar</td>
-<td align="left">수직 바 차트(스택 + 그룹 토글)</td>
-</tr>
-<tr>
-<td align="left">stackedBar</td>
-<td align="left">스택 바 차트</td>
-</tr>
-<tr>
-<td align="left">groupedBar</td>
-<td align="left">그룹 바 차트</td>
-</tr>
-<tr>
-<td align="left">line</td>
-<td align="left">라인 차트</td>
-</tr>
-<tr>
-<td align="left">pie</td>
-<td align="left">파이 차트</td>
-</tr>
-<tr>
-<td align="left">horizontalBar</td>
-<td align="left">수평 바 차트(스택 + 그룹 토글)</td>
-</tr>
-<tr>
-<td align="left">stackedHorizontalBar</td>
-<td align="left">스택 수평 바 차트</td>
-</tr>
-<tr>
-<td align="left">groupedHorizontalBar</td>
-<td align="left">그룹 수평 바 차트</td>
-</tr>
-<tr>
-<td align="left">linePlusBar</td>
-<td align="left">라인 + 바 차트</td>
-</tr>
-<tr>
-<td align="left">lineFocus</td>
-<td align="left">라인 포커스 차트 (라인 차트 하단에 네비게이션 기능을 하는 라인 차트가 추가된다.)</td>
-</tr>
-<tr>
-<td align="left">bar3d</td>
-<td align="left">수직 3D 바 차트</td>
-</tr>
-<tr>
-<td align="left">horizontalBar3d</td>
-<td align="left">수평 3D 바 차트</td>
-</tr>
-</tbody>
-</table>
 
 ## MVC 방식으로 차트 만들기
 
