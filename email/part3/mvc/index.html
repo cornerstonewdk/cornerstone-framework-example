@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>Cornerstone Framework Part2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- START 필요 스타일 -->
+    <link rel="stylesheet" href="cornerstone/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="cornerstone/theme-white/cornerstone.css"/>
+    <!-- //END 필요 스타일 -->
+    <style type="text/css">
+        #pie {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+<div id="pie" class="container"></div>
+
+<!-- START 화면전환 필요 라이브러리 -->
+<script src="cornerstone/jquery/jquery-1.10.2.min.js"></script>
+<script src="cornerstone/underscore/underscore-min.js"></script>
+<script src="cornerstone/backbone/backbone-min.js"></script>
+<script src="cornerstone/d3/d3.v3.min.js"></script>
+<script src="cornerstone/nv/nv.d3.min.js"></script>
+<script src="cornerstone/widget-chart/widget-chart.js"></script>
+<!-- //END 화면전환 필요 라이브러리 -->
+
+<script type="text/javascript">
+    var Model = Backbone.Model.extend({
+        url: 'data/pie.json'
+    });
+
+    var chart = new Chart({
+        el: '#pie',
+        model: new Model(),
+        chartOptions: {
+            chartType: 'pie'
+        }
+    });
+
+    chart.model.fetch();
+</script>
+</body>
+</html>
