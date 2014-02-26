@@ -27,21 +27,5 @@
 <script src="cornerstone/nv/nv.d3.min.js"></script>
 <script src="cornerstone/widget-chart/widget-chart.js"></script>
 <!-- //END 화면전환 필요 라이브러리 -->
-
-<script type="text/javascript">
-    var Model = Backbone.Model.extend({
-        url: 'data/pie.json'
-    });
-
-    var chart = new Chart({
-        el: '#pie',
-        model: new Model(),
-        chartOptions: {
-            chartType: 'pie'
-        }
-    });
-
-    chart.model.fetch();
-</script>
 </body>
 </html>

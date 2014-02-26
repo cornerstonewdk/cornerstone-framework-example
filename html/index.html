@@ -25,17 +25,5 @@
 <script src="cornerstone/nv/nv.d3.min.js"></script>
 <script src="cornerstone/widget-chart/widget-chart.js"></script>
 <!-- //END 화면전환 필요 라이브러리 -->
-
-<script type="text/javascript">
-    $.ajax({
-        url: 'data/pie.json',
-        success: function (data) {
-            $('#pie').featuredChart({
-                chartType: 'pie',
-                data: data
-            });
-        }
-    });
-</script>
 </body>
 </html>
