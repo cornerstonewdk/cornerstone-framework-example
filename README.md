@@ -8,3 +8,5 @@ Cornerstone Framework 블로그, 이메일 및 가이드 등에서 사용되는 
 - Part1 홈: [예제](email/part1/)
 - Part1 HTML 예제: [예제](email/part1/html/)
 - Part1 MVC 예제: [예제](email/part1/mvc/)
+
+Backbone.Model.extend
