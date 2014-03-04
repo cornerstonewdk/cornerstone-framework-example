@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>Cornerstone Framework Username Part1 MVC Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cornerstone/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="cornerstone/theme-white/cornerstone.css"/>
+    <link rel="stylesheet" href="../stylesheets/main.css"/>
+</head>
+<body>
+<!-- Start 고정 Header -->
+<header>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Cornerstone</a>
+        </div>
+    </nav>
+</header>
+<!-- //End 고정 Header -->
+
+<!-- Start Pages -->
+<div id="pages" class="container">
+    <section id="list"></section>
+    <section id="add"></section>
+    <section id="detail"></section>
+</div>
+<!-- //End Pages -->
+
+<!-- Start 고정 Footer -->
+<footer>
+    <div class="navbar-mobile btn-group btn-group-justified navbar-fixed-bottom">
+        <a href="#list" class="btn btn-default" data-transition="slide">
+            <span class="glyphicon glyphicon-info-sign"></span>
+            <span class="text">목록</span>
+        </a>
+        <a href="#detail" class="btn btn-default" data-transition="flip" data-duration="1500">
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="text">상세</span>
+        </a>
+        <a href="#add" class="btn btn-default" data-transition="slide">
+            <span class="glyphicon glyphicon-download-alt"></span>
+            <span class="text">등록</span>
+        </a>
+    </div>
+</footer>
+<!-- //End 고정 Footer -->
+
+<script src="cornerstone/launcher/launcher.js" data-target="app/main"></script>
+</body>
+</html>

@@ -1,19 +1,9 @@
 body {
-    padding-top: 55px;
+    padding-top: 60px;
     padding-bottom: 70px;
 }
 
-/* 상단 메뉴의 브랜드 이름 위치를 center로 변경 */
-.navbar-header {
-    float: left;
-    text-align: center;
-    width: 100%;
-}
-.navbar-brand {
-    display: inline-block;
-    float:none;
-}
-
+/* Part 1 */
 .btn-lg {
     margin: 50px 20px;
     padding: 20px;
@@ -33,4 +23,15 @@ body {
 
 .media, .form-horizontal {
     margin-top: 50px;
+}
+
+/* 상단 메뉴의 브랜드 이름 위치를 center로 변경 */
+.navbar-header {
+    float: left;
+    text-align: center;
+    width: 100%;
+}
+.navbar-brand {
+    display: inline-block;
+    float:none;
 }
