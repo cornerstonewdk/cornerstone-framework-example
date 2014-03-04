@@ -25,15 +25,15 @@ Part 4에서는 [Cornerstone Framework](https://github.com/cornerstonewdk/corner
 
 - [예제 소스](https://github.com/cornerstonewdk/cornerstone-framework-example/archive/email-part4-incomplete.zip)
 
-### 1. 페이지간 이동 제어를 위한 라우터 및 화면전환 만들기
+### 1. 페이지간 이동 제어를 위한 라우팅 및 화면전환 만들기
 [Part 1. 화면 전환 효과가 필요하신가요? ](http://blog.cornerstone.sktelecom.com/post/76303411884/part-1)에서 다뤘던 예제 소스를 그대로 가져옵니다.
 
 Part 1 예제 완성 소스 [다운로드](https://github.com/cornerstonewdk/cornerstone-framework-example/archive/email-part1-complete.zip) 
 
-이 소스 중 페이지간 이동 제어를 위해 라우터 기능이 있는 MVC방식을 이용합니다.
+이 소스 중 페이지간 이동 제어를 위해 라우팅 기능이 있는 MVC방식을 이용합니다.
 
 ### 2. 고정 메뉴 만들기
-가져온 Part 1 MVC 소스에서 각 템플릿의 Header와 Footer에 고정 메뉴를 추가합니다. 고정 메뉴를 추가한 후 Part 1에서 템플릿 페이지에 있던 페이지 이동을 위한 링크를 
+가져온 Part 1 MVC 소스 중  `index.html`에 Header와 Footer에 고정 메뉴를 추가합니다. 고정 메뉴를 추가한 후 Part 1에서 템플릿 페이지에 있던 페이지 이동을 위한 링크를 
 Footer 메뉴로 옮겨야 하므로 Footer 메뉴에 적용 후 기존 템플릿의 페이지 이동을 위한 `a`태그를 삭제해야합니다.
 
 ***코드 1-1*** | [고정 Header / Footer 추가 index.html ] (https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part4-incomplete/mvc/index.html)
@@ -92,7 +92,6 @@ Footer 메뉴로 옮겨야 하므로 Footer 메뉴에 적용 후 기존 템플�
     </tbody>
 </table>
 
-
 ### 3. 상세페이지에 차트 위젯 추가하기
 템플릿 중 detail.template 파일을 아래 소스로 변경합니다.
 
@@ -109,7 +108,7 @@ Footer 메뉴로 옮겨야 하므로 Footer 메뉴에 적용 후 기존 템플�
 </div>
 <!-- //END 샘플 상세 페이지 -->
 ```
-그리고 Part 3에서 사용한 샘플 데이터를 Part 4에 추가한 후, detail 라우터에 차트 위젯을 적용할 코드를 추가합니다.
+그리고 Part 3에서 사용한 샘플 데이터를 Part 4에 추가한 후, detail 라우팅에 차트 위젯을 적용할 코드를 추가합니다.
 
 ***코드 3-2*** | [detail.template]()
 ```
@@ -174,7 +173,37 @@ body {
 }
 ```
 
+<table cellspacing="0" cellpadding="0" border="0" style="border: none; width: 100%;">
+    <tbody>
+        <tr>
+            <td style="border-top: none; text-align: center;">
+                <a href="http://cornerstonewdk.github.io/cornerstone-framework-example/email/part2/html/index.html">
+                    <img alt="" width="320"
+                    src="https://31.media.tumblr.com/1c76d1686774f5c80afad99dc7dd89bb/tumblr_inline_n1xew7ex3r1rc9vvo.png"> 
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
+### 4. ListView 적용하기
+3번까지 기존 예제들을 통합하는 작업을 수행했습니다. 이 번 단계에서는 목록 페이지에 
+ListView를 적용할 예정입니다. ListView는 대용량 스크롤이 필요한 목록 등에 활용하기 좋은 위젯 입니다. [자세히 보기](http://cornerstone.sktelecom.com/2/livedoc/#4402)
+
+- 샘플 데이터 준비
+- 샘플 데이터를 반복시켜 대용량 목록 구현
+- 리스트뷰 적용
+
+
+### 5. CSS 가속을 이용한 Carousel 적용하기
+[자세히 보기](http://cornerstone.sktelecom.com/2/livedoc/#4310)
+
+- 기본 Carousel 적용 
+- CSS 하드웨어 가속 소스 추가
+- 하드웨어 가속 전/후를 모바일에서 직접 체험해보는 것을 권장
+
+
+이제 구현된 예제를 확인해 볼 수 있습니다. 지금까지 가이드 한 예제 소스는 Cornerstone Framework 개발 팀에서 관리하는 Github 저장소에서 확인하실 수 있습니다.
 
 - [Part4 소스](https://github.com/cornerstonewdk/cornerstone-framework-example/blob/email-part4-complete/html/index.html)
 - [Part4 미리 보기](http://cornerstonewdk.github.io/cornerstone-framework-example/email/part4/mvc/)

@@ -1,0 +1,5 @@
+{{_id}}. {{this.title}}
+<div class="pull-right">
+    <span class="badge">{{this.published}}</span>
+    <span class="glyphicon glyphicon-chevron-right"></span>
+</div>
