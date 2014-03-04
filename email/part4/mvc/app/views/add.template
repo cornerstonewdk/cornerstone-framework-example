@@ -1,0 +1,23 @@
+<!-- START 샘플 추가 Form -->
+<form class="form-horizontal">
+    <div class="form-group">
+        <label for="inputUsername1" class="col-lg-2 control-label">Username</label>
+
+        <div class="col-lg-10">
+            <input type="text" class="form-control" id="inputUsername1" placeholder="Username">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputMessage1" class="col-lg-2 control-label">Message</label>
+
+        <div class="col-lg-10">
+            <input type="text" class="form-control" id="inputMessage1" placeholder="Message">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button type="submit" class="btn btn-success">추가</button>
+        </div>
+    </div>
+</form>
+<!-- //END 샘플 추가 Form -->
