@@ -35,3 +35,8 @@ body {
     display: inline-block;
     float:none;
 }
+
+#pie {
+    width: 300px;
+    height: 300px;
+}
