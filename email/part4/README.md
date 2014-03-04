@@ -63,7 +63,7 @@ Footer 메뉴로 옮겨야 하므로 Footer 메뉴에 적용 후 기존 템플�
             <span class="glyphicon glyphicon-info-sign"></span>
             <span class="text">목록</span>
         </a>
-        <a href="#detail" class="btn btn-default" data-transition="pop" data-duration="1500">
+        <a href="#detail" class="btn btn-default" data-transition="slide" data-duration="1500">
             <span class="glyphicon glyphicon-star"></span>
             <span class="text">상세</span>
         </a>
