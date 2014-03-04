@@ -63,7 +63,7 @@ Footer 메뉴로 옮겨야 하므로 Footer 메뉴에 적용 후 기존 템플�
             <span class="glyphicon glyphicon-info-sign"></span>
             <span class="text">목록</span>
         </a>
-        <a href="#detail" class="btn btn-default" data-transition="flip" data-duration="1500">
+        <a href="#detail" class="btn btn-default" data-transition="pop" data-duration="1500">
             <span class="glyphicon glyphicon-star"></span>
             <span class="text">상세</span>
         </a>
@@ -85,7 +85,7 @@ Footer 메뉴로 옮겨야 하므로 Footer 메뉴에 적용 후 기존 템플�
             <td style="border-top: none; text-align: center;">
                 <a href="http://cornerstonewdk.github.io/cornerstone-framework-example/email/part2/html/index.html">
                     <img alt="" width="320"
-                    src="https://31.media.tumblr.com/f1e08aa8d31233dcf47d333545d8ff60/tumblr_inline_n1xdmjKNfn1rc9vvo.png"> 
+                    src="https://31.media.tumblr.com/a1ea5e411703e32a5b8b7429eb4d5350/tumblr_inline_n1xe08v03k1rc9vvo.png"> 
                 </a>
             </td>
         </tr>
@@ -93,22 +93,88 @@ Footer 메뉴로 옮겨야 하므로 Footer 메뉴에 적용 후 기존 템플�
 </table>
 
 
-### 3. 위젯 차트 적용하기
-기본 HTML, CSS, JS와 샘플 JSON 데이터가 준비된 상태에서 실제 위젯 차트를 적용하기 위해 아래와 같이
-`javascript` 코드를 추가하면 `ajax`를 이용해서 샘플 데이터를 가져온 후 [Cornerstone 위젯 차트](http://cornerstone.sktelecom.com/2/livedoc/#4405)에 가져온 데이터를 옵션에 추가해서 차트를 그릴 수 있습니다.
+### 3. 상세페이지에 차트 위젯 추가하기
+템플릿 중 detail.template 파일을 아래 소스로 변경합니다.
 
-***코드 1-3*** | [차트 적용 코드](https://gist.githubusercontent.com/WoosubKim/4cd8a7ce9f3563912803/raw/5a263e07934c14b915c3c782e6605c260fb6a05c/chart-for-html)
+***코드 3-1*** | [detail.template]()
 ```
-$.ajax({
-    url: 'data/pie.json',
-    success: function (data) {
-        $('#pie').featuredChart({
-            chartType: 'pie',
-            data: data
-        });
-    }
+<!-- START 샘플 상세 페이지 -->
+<div class="page-header">
+    <h1>Media
+        <small>heading</small>
+    </h1>
+    <!-- Carousel 추가 예정 -->
+
+    <div id="pie" class="container"></div>
+</div>
+<!-- //END 샘플 상세 페이지 -->
+```
+그리고 Part 3에서 사용한 샘플 데이터를 Part 4에 추가한 후, detail 라우터에 차트 위젯을 적용할 코드를 추가합니다.
+
+***코드 3-2*** | [detail.template]()
+```
+// main.js
+define([
+    'jquery',
+    'underscore',
+    'backbone',
+    'multipage-router',
+    'widget-chart',
+    'views/list',
+    'views/add',
+    'views/detail'
+], function ($, _, Backbone, MultipageRouter, Chart, ListView, AddView, DetailView) {
+    return {
+        launch: function () {
+			...
+			'detail-page': {
+                        fragment: 'detail',
+                        el: '#detail',
+                        render: function () {
+                            detailView.render();
+
+                            var Model =
+                            Backbone.Model.extend({
+                                url: 'data/pie.json'
+                            });
+
+                            var chart = new Chart({
+                                el: '#pie',
+                                model: new Model(),
+                                chartOptions: {
+                                    chartType: 'pie'
+                                }
+                            });
+
+                            chart.model.fetch();
+                        },
+                        active: 'active',
+                        inactive: 'inactive'
+                    }
+			...
+        }
+    };
 });
 ```
+
+마지막으로 파이 차트의 크기를 정하기 위한 스타일을 main.css에 적용합니다.
+
+***코드 3-3*** | [main.css]()
+```
+body {
+    padding-top: 60px;
+    padding-bottom: 70px;
+}
+
+...
+
+#pie {
+    width: 300px;
+    height: 300px;
+}
+```
+
+
 
 - [Part4 소스](https://github.com/cornerstonewdk/cornerstone-framework-example/blob/email-part4-complete/html/index.html)
 - [Part4 미리 보기](http://cornerstonewdk.github.io/cornerstone-framework-example/email/part4/mvc/)

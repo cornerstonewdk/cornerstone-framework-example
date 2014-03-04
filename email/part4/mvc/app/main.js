@@ -4,10 +4,11 @@ define([
     'underscore',
     'backbone',
     'multipage-router',
+    'widget-chart',
     'views/list',
     'views/add',
     'views/detail'
-], function ($, _, Backbone, MultipageRouter, ListView, AddView, DetailView) {
+], function ($, _, Backbone, MultipageRouter, Chart, ListView, AddView, DetailView) {
     return {
         launch: function () {
             /**
@@ -43,8 +44,22 @@ define([
                     'detail-page': {
                         fragment: 'detail',
                         el: '#detail',
-                        render: function (id) {
+                        render: function () {
                             detailView.render();
+
+                            var Model = Backbone.Model.extend({
+                                url: 'data/pie.json'
+                            });
+
+                            var chart = new Chart({
+                                el: '#pie',
+                                model: new Model(),
+                                chartOptions: {
+                                    chartType: 'pie'
+                                }
+                            });
+
+                            chart.model.fetch();
                         },
                         active: 'active',
                         inactive: 'inactive'
