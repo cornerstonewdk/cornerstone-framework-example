@@ -36,6 +36,10 @@ body {
     float:none;
 }
 
+.navbar-fixed-top, .navbar-fixed-bottom {
+    z-index: 1000;
+}
+
 #pie {
     width: 300px;
     height: 300px;

@@ -3,7 +3,8 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'template!./detail'
+    'template!./detail',
+    'widget-carousel'
 ], function ($, _, Backbone, Template) {
     return Backbone.View.extend({
         el: '#detail',
