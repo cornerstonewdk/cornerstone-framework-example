@@ -1,15 +1,14 @@
 # Part 4. 반응이 빠른 모바일 웹을 만들려면 ?
 
-Part 4에서는 [Cornerstone Framework](https://github.com/cornerstonewdk/cornerstone-framework/tree/dev-2.0)를 이용해서 이전에 구현한 화면전환, 고정메뉴, 차트등을 활용해서 간단한 웹앱을 만들고, 추가적으로 ListView를 활용한 대용량 데이터 Scrolling 및 CSS 하드웨어 가속을 적용한 Carousel를 통해 성능 향상까지 적용된 웹앱을 구현할 것입니다. 
+Part 4에서는 [Cornerstone Framework](https://github.com/cornerstonewdk/cornerstone-framework/tree/dev-2.0)를 이용해서 이전에 구현한 화면전환, 고정메뉴, 차트등을 활용해서 간단한 웹앱을 만들고, 추가적으로 ListView를 활용한 대용량 데이터 Scrolling 및 CSS 하드웨어 가속을 적용한 Carousel을 통해 성능 향상까지 적용된 웹앱을 구현할 것입니다. 
 
-[이미지 변경 예정]
 <table cellspacing="0" cellpadding="0" border="0" style="border: none; width: 100%;">
     <tbody>
         <tr>
             <td style="border-top: none; text-align: center;">
                 <a href="http://cornerstonewdk.github.io/cornerstone-framework-example/email/part2/html/index.html">
                     <img alt="" width="320"
-                    src="https://31.media.tumblr.com/2eeff0bfe15ca5d243d42a027d1974f1/tumblr_inline_n1jskvKxhY1rc9vvo.gif"> 
+                    src="https://31.media.tumblr.com/1eb1c096f98c62d446c13e5e8aa5e846/tumblr_inline_n1y44vfd0h1rc9vvo.png"> 
                 </a>
             </td>
         </tr>
@@ -26,7 +25,7 @@ Part 4에서는 [Cornerstone Framework](https://github.com/cornerstonewdk/corner
 - [예제 소스](https://github.com/cornerstonewdk/cornerstone-framework-example/archive/email-part4-incomplete.zip)
 
 ### 1. 페이지간 이동 제어를 위한 라우팅 및 화면전환 만들기
-[Part 1. 화면 전환 효과가 필요하신가요? ](http://blog.cornerstone.sktelecom.com/post/76303411884/part-1)에서 다뤘던 예제 소스를 그대로 가져옵니다.
+[Part 1. 화면 전환 효과가 필요하신가요? ](http://blog.cornerstone.sktelecom.com/post/76303411884/part-1)에서 다뤘던 예제 완성 소스를 그대로 가져옵니다.
 
 Part 1 예제 완성 소스 [다운로드](https://github.com/cornerstonewdk/cornerstone-framework-example/archive/email-part1-complete.zip) 
 
@@ -187,20 +186,185 @@ body {
 </table>
 
 ### 4. ListView 적용하기
-3번까지 기존 예제들을 통합하는 작업을 수행했습니다. 이 번 단계에서는 목록 페이지에 
+3번까지 기존 예제들을 통합하는 작업을 수행했습니다. 이번 단계에서는 목록 페이지에 
 ListView를 적용할 예정입니다. ListView는 대용량 스크롤이 필요한 목록 등에 활용하기 좋은 위젯 입니다. [자세히 보기](http://cornerstone.sktelecom.com/2/livedoc/#4402)
 
-- 샘플 데이터 준비
-- 샘플 데이터를 반복시켜 대용량 목록 구현
-- 리스트뷰 적용
+기존 list.template을 ListView 적용을 위해 아래 코드 4-1로 변경합니다.
 
+***코드 4-1*** | [list.template]()
+```
+<!-- START 샘플 리스트 -->
+<div id="listView" class="list-view list-group"></div>
+<!-- //END 샘플 리스트 -->
+```
+
+그리고 아래 샘플 데이터를 `pie.json`이 있는 `data/` 디렉토리에 추가합니다.
+
+***코드 4-2*** | [sample-list.json]()
+```
+[
+    {
+        "_id": 1,
+        "title": "Lompoc",
+        "published": "VA"
+    },
+    ...
+    {
+        "_id": 100,
+        "title": "Calabasas",
+        "published": "WY"
+    }
+]
+```
+
+마지막으로 `list.js` 뷰를 아래 코드 4-3과 같이 변경합니다.
+
+***코드 4-3*** | [list.js]()
+```
+// list.js
+define([
+    'jquery',
+    'underscore',
+    'backbone',
+    'widget-listview',
+    'template!./list',
+    'template!./list-item'
+], function ($, _, Backbone, ListView, Template, ItemTemplate) {
+    return Backbone.View.extend({
+        el: '#list',
+        render: function () {
+            this.$el.html(Template());
+
+            // 콜렉션에 데이터를 가져올 url를 설정한다.
+            var ItemList = Backbone.Collection.extend({
+                url: "data/sample-list.json",
+                model: Backbone.Model.extend({
+                    idAttribute: "_id" // 기본 id 속성은 id이다. id 명칭을 변경하고 싶을 때 설정
+                })
+            });
+            var itemList = new ItemList();
+
+            // 리스트 아이템 뷰 정의
+            var ItemView = Backbone.View.extend({
+                tagName: "a",
+                className: "list-group-item",
+                render: function () {
+                    this.$el.html(ItemTemplate(this.model.attributes));
+                }
+            });
+
+            // 리스트뷰 뷰 객체를 생성하고 el에 설정된 타겟에 model객체에 담긴 데이터를 통해 리스트뷰를 그린다.
+            var listView = new ListView({
+                el: "#listView",
+                collection: itemList,
+                itemView: ItemView, // 사용자가 정의하는 리스트의 한 Row가 되는 SubView
+                optimization: true
+            });
+            listView.render();
+            itemList.fetch();
+
+        }
+    });
+});
+```
+
+<table cellspacing="0" cellpadding="0" border="0" style="border: none; width: 100%;">
+    <tbody>
+        <tr>
+            <td style="border-top: none; text-align: center;">
+                <a href="http://cornerstonewdk.github.io/cornerstone-framework-example/email/part2/html/index.html">
+                    <img alt="" width="320"
+                    src="https://31.media.tumblr.com/1eb1c096f98c62d446c13e5e8aa5e846/tumblr_inline_n1y44vfd0h1rc9vvo.png"> 
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 ### 5. CSS 가속을 이용한 Carousel 적용하기
+CSS 가속을 적용하기 위해 추가 페이지에 Carousel 위젯을 추가합니다.
 [자세히 보기](http://cornerstone.sktelecom.com/2/livedoc/#4310)
 
-- 기본 Carousel 적용 
-- CSS 하드웨어 가속 소스 추가
-- 하드웨어 가속 전/후를 모바일에서 직접 체험해보는 것을 권장
+***코드 5-1*** | [add.template]()
+```
+<!-- START 캐로셀 -->
+<div id="carousel-example-generic" class="carousel slide bs-docs-carousel-example">
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+       ...
+    </div>
+    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+        <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+        <span class="icon-next"></span>
+    </a>
+</div>
+<!-- //END 캐로셀 -->
+```
+
+그리고 Carousel 기능이 작동할 수 있도록 `add.js`뷰의 define에 `widget-carousel`을 추가합니다.
+
+***코드 5-2*** | [detail.js]()
+```
+// add.js
+define([
+    'jquery',
+    'underscore',
+    'backbone',
+    'template!./add',
+    'widget-carousel'
+], function ($, _, Backbone, Template) {
+...  
+```
+
+마지막으로  그 위젯의 스타일에 CSS 가속이 적용될 수 있도록 코드 5-3을 main.css에 스타일 코드를 추가합니다.
+아래 스타일 속성 중 `-webkit-transform` 속성은 특히 모바일에서 하드웨어 가속을 이용하여 성능이 뛰어나므로 모바일에서 사용하는 것을 적극 권장합니다. 
+
+***코드 5-3*** | [main.css]()
+
+```
+/* 하드웨어 가속 속성을 적용한.carousel .carousel-inner  스타일 */
+.carousel .carousel-inner .item {
+    -webkit-transition: 0.6s ease-in-out -webkit-transform;
+    -webkit-backface-visibility: hidden;
+}
+
+.carousel .carousel-inner .active {
+    -webkit-transform: translate(0%, 0%);
+}
+
+.carousel .carousel-inner .next {
+    -webkit-transform: translate(100%, 0%);
+    left: 0;
+}
+
+.carousel .carousel-inner .prev {
+    -webkit-transform: translate(-100%, 0%);
+    left: 0;
+}
+
+.carousel .carousel-inner .next.left, .carousel .carousel-inner.prev.right {
+    -webkit-transform: translate(0%, 0%);
+    left: 0;
+}
+
+.carousel .carousel-inner .active.left {
+    -webkit-transform: translate(-100%, 0%);
+    left: 0;
+}
+
+.carousel .carousel-inner .active.right {
+    -webkit-transform: translate(100%, 0%);
+    left: 0;
+}
+```
+
+갤럭시 S3와 같은 모바일 디바이스로 코드 5-1 적용 전/후의 Carousel 애니메이션 부드러움을 직접 체험해보시길 바랍니다.
 
 
 이제 구현된 예제를 확인해 볼 수 있습니다. 지금까지 가이드 한 예제 소스는 Cornerstone Framework 개발 팀에서 관리하는 Github 저장소에서 확인하실 수 있습니다.
