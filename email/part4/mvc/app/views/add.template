@@ -1,3 +1,4 @@
+<!-- START 캐로셀 -->
 <div id="carousel-example-generic" class="carousel slide bs-docs-carousel-example">
     <ol class="carousel-indicators">
         <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -22,6 +23,7 @@
         <span class="icon-next"></span>
     </a>
 </div>
+<!-- //END 캐로셀 -->
 
 <!-- START 샘플 추가 Form -->
 <form class="form-horizontal">

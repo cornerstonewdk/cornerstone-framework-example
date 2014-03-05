@@ -3,7 +3,6 @@
     <h1>Media
         <small>heading</small>
     </h1>
-    <!-- Carousel 추가 예정 -->
 
     <div id="pie" class="container"></div>
 </div>
