@@ -35,7 +35,7 @@ Part 1 예제 완성 소스 [다운로드](https://github.com/cornerstonewdk/cor
 가져온 Part 1 MVC 소스 중  `index.html`에 Header와 Footer에 고정 메뉴를 추가합니다. 고정 메뉴를 추가한 후 Part 1에서 템플릿 페이지에 있던 페이지 이동을 위한 링크를 
 Footer 메뉴로 옮겨야 하므로 Footer 메뉴에 적용 후 기존 템플릿의 페이지 이동을 위한 `a`태그를 삭제해야합니다.
 
-***코드 1-1*** | [고정 Header / Footer 추가 index.html ] (https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part4-incomplete/mvc/index.html)
+***코드 1-1*** | [고정 Header / Footer 추가 index.html ] (https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part4/email/part4/mvc/index.html)
 ```
 <!-- Start 고정 Header -->
 <header>
@@ -94,14 +94,13 @@ Footer 메뉴로 옮겨야 하므로 Footer 메뉴에 적용 후 기존 템플�
 ### 3. 상세페이지에 차트 위젯 추가하기
 템플릿 중 detail.template 파일을 아래 소스로 변경합니다.
 
-***코드 3-1*** | [detail.template]()
+***코드 3-1*** | [detail.template](https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part4/email/part4/mvc/app/views/detail.template)
 ```
 <!-- START 샘플 상세 페이지 -->
 <div class="page-header">
     <h1>Media
         <small>heading</small>
     </h1>
-    <!-- Carousel 추가 예정 -->
 
     <div id="pie" class="container"></div>
 </div>
@@ -109,7 +108,7 @@ Footer 메뉴로 옮겨야 하므로 Footer 메뉴에 적용 후 기존 템플�
 ```
 그리고 Part 3에서 사용한 샘플 데이터를 Part 4에 추가한 후, detail 라우팅에 차트 위젯을 적용할 코드를 추가합니다.
 
-***코드 3-2*** | [detail.template]()
+***코드 3-2*** | [main.js](https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part4/email/part4/mvc/app/main.js)
 ```
 // main.js
 define([
@@ -157,7 +156,7 @@ define([
 
 마지막으로 파이 차트의 크기를 정하기 위한 스타일을 main.css에 적용합니다.
 
-***코드 3-3*** | [main.css]()
+***코드 3-3*** | [main.css](https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part4/email/part4/stylesheets/main.css)
 ```
 body {
     padding-top: 60px;
@@ -170,6 +169,7 @@ body {
     width: 300px;
     height: 300px;
 }
+...
 ```
 
 <table cellspacing="0" cellpadding="0" border="0" style="border: none; width: 100%;">
@@ -189,7 +189,7 @@ body {
 3번까지 기존 예제들을 통합하는 작업을 수행했습니다. 이번 단계에서는 목록 페이지에 
 ListView를 적용할 예정입니다. ListView는 대용량 스크롤이 필요한 목록 등에 활용하기 좋은 위젯 입니다. [자세히 보기](http://cornerstone.sktelecom.com/2/livedoc/#4402)
 
-기존 list.template을 ListView 적용을 위해 아래 코드 4-1로 변경합니다.
+기존 list.template을 ListView 적용을 위해 아래 코드 4-1로 변경하고, list-item.template을 만듭니다.
 
 ***코드 4-1*** | [list.template]()
 ```
@@ -198,9 +198,18 @@ ListView를 적용할 예정입니다. ListView는 대용량 스크롤이 필요
 <!-- //END 샘플 리스트 -->
 ```
 
+***코드 4-2*** | [list-item.template](https://github.com/cornerstonewdk/cornerstone-framework-example/raw/email-part4/email/part4/mvc/app/views/list-item.template)
+```
+{{_id}}. {{this.title}}
+<div class="pull-right">
+    <span class="badge">{{this.published}}</span>
+    <span class="glyphicon glyphicon-chevron-right"></span>
+</div>
+```
+
 그리고 아래 샘플 데이터를 `pie.json`이 있는 `data/` 디렉토리에 추가합니다.
 
-***코드 4-2*** | [sample-list.json]()
+***코드 4-3*** | [sample-list.json](https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part4/email/part4/mvc/data/sample-list.json)
 ```
 [
     {
@@ -217,9 +226,9 @@ ListView를 적용할 예정입니다. ListView는 대용량 스크롤이 필요
 ]
 ```
 
-마지막으로 `list.js` 뷰를 아래 코드 4-3과 같이 변경합니다.
+마지막으로 `list.js` 뷰를 아래 코드 4-4과 같이 변경합니다.
 
-***코드 4-3*** | [list.js]()
+***코드 4-4*** | [list.js](https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part4/email/part4/mvc/app/views/list.js)
 ```
 // list.js
 define([
@@ -285,7 +294,7 @@ define([
 CSS 가속을 적용하기 위해 추가 페이지에 Carousel 위젯을 추가합니다.
 [자세히 보기](http://cornerstone.sktelecom.com/2/livedoc/#4310)
 
-***코드 5-1*** | [add.template]()
+***코드 5-1*** | [add.template](https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part4/email/part4/mvc/app/views/add.template)
 ```
 <!-- START 캐로셀 -->
 <div id="carousel-example-generic" class="carousel slide bs-docs-carousel-example">
@@ -309,7 +318,7 @@ CSS 가속을 적용하기 위해 추가 페이지에 Carousel 위젯을 추가�
 
 그리고 Carousel 기능이 작동할 수 있도록 `add.js`뷰의 define에 `widget-carousel`을 추가합니다.
 
-***코드 5-2*** | [detail.js]()
+***코드 5-2*** | [add.js](https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part4/email/part4/mvc/app/views/add.js)
 ```
 // add.js
 define([
@@ -325,7 +334,7 @@ define([
 마지막으로  그 위젯의 스타일에 CSS 가속이 적용될 수 있도록 코드 5-3을 main.css에 스타일 코드를 추가합니다.
 아래 스타일 속성 중 `-webkit-transform` 속성은 특히 모바일에서 하드웨어 가속을 이용하여 성능이 뛰어나므로 모바일에서 사용하는 것을 적극 권장합니다. 
 
-***코드 5-3*** | [main.css]()
+***코드 5-3*** | [main.css](https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part4/email/part4/stylesheets/main.css)
 
 ```
 /* 하드웨어 가속 속성을 적용한.carousel .carousel-inner  스타일 */
