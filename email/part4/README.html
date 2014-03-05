@@ -554,9 +554,9 @@ Custom Style
 <td valign="top" class="textContent markdown">
 <!-- EDITABLE MARKDOWN -->
 
-<h1>Part 3. 차트가 필요하신가요?</h1>
+<h1>Part 4. 반응이 빠른 모바일 웹을 만들려면 ?</h1>
 
-<p><a href="https://github.com/cornerstonewdk/cornerstone-framework/tree/dev-2.0">Cornerstone Framework</a>에서는 데이터를 차트로 표현할 수 있는 Widget을 제공합니다.</p>
+<p>Part 4에서는 <a href="https://github.com/cornerstonewdk/cornerstone-framework/tree/dev-2.0">Cornerstone Framework</a>를 이용해서 기존에 구현한 화면전환, 고정메뉴, 차트 등을 활용해서 간단한 웹앱을 만들고, 추가적으로 ListView를 활용한 대용량 데이터 Scrolling 및 CSS 하드웨어 가속을 적용한 Carousel을 통해 성능 향상까지 적용된 웹앱을 구현할 것입니다. </p>
 
 <table cellspacing="0" cellpadding="0" border="0" style="border: none; width: 100%;">
     <tbody>
@@ -564,233 +564,415 @@ Custom Style
         <td style="border-top: none; text-align: center;">
             <a href="http://cornerstonewdk.github.io/cornerstone-framework-example/email/part2/html/index.html">
                 <img alt="" width="320"
-                     src="https://31.media.tumblr.com/2eeff0bfe15ca5d243d42a027d1974f1/tumblr_inline_n1jskvKxhY1rc9vvo.gif">
+                     src="https://31.media.tumblr.com/1eb1c096f98c62d446c13e5e8aa5e846/tumblr_inline_n1y44vfd0h1rc9vvo.png">
             </a>
         </td>
     </tr>
     </tbody>
 </table>
 
-<p>그리고 아래와 같은 다양한 종류의 차트를 표현 할 수 있습니다.</p>
+<h2>기존 예제를 이용해 간단한 웹앱 만들기</h2>
 
-<h4><a href="http://cornerstone.sktelecom.com/2/livedoc/#4405">차트 종류 (chartType)</a></h4>
-
-<table class="table table-striped table-hover table-responsive table-bordered">
-    <thead>
-    <tr>
-        <th align="left">옵션명</th>
-        <th align="left">설명</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td align="left">bar</td>
-        <td align="left">수직 바 차트(스택 + 그룹 토글)</td>
-    </tr>
-    <tr>
-        <td align="left">stackedBar</td>
-        <td align="left">스택 바 차트</td>
-    </tr>
-    <tr>
-        <td align="left">groupedBar</td>
-        <td align="left">그룹 바 차트</td>
-    </tr>
-    <tr>
-        <td align="left">line</td>
-        <td align="left">라인 차트</td>
-    </tr>
-    <tr>
-        <td align="left">pie</td>
-        <td align="left">파이 차트</td>
-    </tr>
-    <tr>
-        <td align="left">horizontalBar</td>
-        <td align="left">수평 바 차트(스택 + 그룹 토글)</td>
-    </tr>
-    <tr>
-        <td align="left">stackedHorizontalBar</td>
-        <td align="left">스택 수평 바 차트</td>
-    </tr>
-    <tr>
-        <td align="left">groupedHorizontalBar</td>
-        <td align="left">그룹 수평 바 차트</td>
-    </tr>
-    <tr>
-        <td align="left">linePlusBar</td>
-        <td align="left">라인 + 바 차트</td>
-    </tr>
-    <tr>
-        <td align="left">lineFocus</td>
-        <td align="left">라인 포커스 차트 (라인 차트 하단에 네비게이션 기능을 하는 라인 차트가 추가된다.)</td>
-    </tr>
-    <tr>
-        <td align="left">bar3d</td>
-        <td align="left">수직 3D 바 차트</td>
-    </tr>
-    <tr>
-        <td align="left">horizontalBar3d</td>
-        <td align="left">수평 3D 바 차트</td>
-    </tr>
-    </tbody>
-</table>
-
-<h2>jQuery Plugin 방식으로 차트 만들기</h2>
+<ul>
+    <li><a href="http://blog.cornerstone.sktelecom.com/post/76303411884/part-1">Part 1. 화면 전환 효과가 필요하신가요? </a></li>
+    <li><a href="http://blog.cornerstone.sktelecom.com/post/77151976915/part-2">Part 2. 화면 상단과 하단에 고정된 영역이 필요하세요? </a></li>
+    <li><a href="http://blog.cornerstone.sktelecom.com/post/77809257661/part-3">Part 3. 차트가 필요하신가요?</a></li>
+</ul>
 
 <p>아래 예제를 시작하기 위한 샘플 파일을 아래 링크를 통해 다운받을 수 있습니다. 다운로드 받은 소스를 통해 아래 등장하는 코드를 추가하면서 예제를 점진적으로 완성해 나갈 수 있습니다.</p>
 
 <ul>
-    <li><a href="https://github.com/cornerstonewdk/cornerstone-framework-example/archive/email-part3-incomplete.zip">예제 소스</a></li>
+    <li><a href="https://github.com/cornerstonewdk/cornerstone-framework-example/archive/email-part4-incomplete.zip">예제 소스</a></li>
 </ul>
 
-<h3>1. 기본 HTML, 스타일 및 필수 라이브러리 준비</h3>
+<h3>1. 페이지간 이동 제어를 위한 라우팅 및 화면전환 만들기</h3>
 
-<p>차트를 표현하기 위한 HTML, CSS, JS를 준비합니다.</p>
+<p><a href="http://blog.cornerstone.sktelecom.com/post/76303411884/part-1">Part 1. 화면 전환 효과가 필요하신가요? </a>에서 다뤘던 예제 완성 소스를 그대로 가져옵니다.</p>
 
-<p><strong><em>코드 1-1</em></strong> | <a href="https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part3-incomplete/html/index.html">기본 HTML</a></p>
+<p>Part 1 예제 완성 소스 <a href="https://github.com/cornerstonewdk/cornerstone-framework-example/archive/email-part1-complete.zip">다운로드</a> </p>
 
-<pre><code>&lt;!DOCTYPE html&gt;
-    &lt;html lang=&quot;ko&quot;&gt;
-    &lt;head&gt;
-        &lt;meta charset=&quot;utf-8&quot;&gt;
-        &lt;title&gt;Cornerstone Framework Part2&lt;/title&gt;
-        &lt;meta name=&quot;viewport&quot;
-            content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+<p>이 소스 중 페이지간 이동 제어를 위해 라우팅 기능이 있는 MVC방식을 이용합니다.</p>
 
-        &lt;!-- START 필요 스타일 --&gt;
-        &lt;link rel=&quot;stylesheet&quot;
-            href=&quot;cornerstone/bootstrap/css/bootstrap.min.css&quot;/&gt;
-        &lt;link rel=&quot;stylesheet&quot;
-            href=&quot;cornerstone/theme-white/cornerstone.css&quot;/&gt;
-        &lt;!-- //END 필요 스타일 --&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;div id=&quot;pie&quot; class=&quot;container&quot;&gt;&lt;/div&gt;
+<h3>2. 고정 메뉴 만들기</h3>
 
-        &lt;!-- START 화면전환 필요 라이브러리 --&gt;
-        &lt;script src=&quot;cornerstone/jquery/jquery-1.10.2.min.js&quot;&gt;&lt;/script&gt;
-        &lt;script src=&quot;cornerstone/d3/d3.v3.min.js&quot;&gt;&lt;/script&gt;
-        &lt;script src=&quot;cornerstone/nv/nv.d3.min.js&quot;&gt;&lt;/script&gt;
-        &lt;script src=&quot;cornerstone/widget-chart/widget-chart.js&quot;&gt;&lt;/script&gt;
-        &lt;!-- //END 화면전환 필요 라이브러리 --&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
+<p>가져온 Part 1 MVC 소스 중  <code>index.html</code>에 Header와 Footer에 고정 메뉴를 추가합니다. 고정 메뉴를 추가한 후 Part 1에서 템플릿 페이지에 있던 페이지 이동을 위한 링크를
+    Footer 메뉴로 옮겨야 하므로 Footer 메뉴에 적용 후 기존 템플릿의 페이지 이동을 위한 <code>a</code>태그를 삭제해야합니다.</p>
+
+<p><strong><em>코드 1-1</em></strong> | <a href="https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part4/email/part4/mvc/index.html">고정 Header / Footer 추가 index.html </a></p>
+
+<pre><code>&lt;!-- Start 고정 Header --&gt;
+&lt;header&gt;
+    &lt;nav class=&quot;navbar navbar-default navbar-fixed-top&quot;
+        role=&quot;navigation&quot;&gt;
+        &lt;div class=&quot;navbar-header&quot;&gt;
+            &lt;a class=&quot;navbar-brand&quot;
+                href=&quot;#&quot;&gt;Cornerstone&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+&lt;!-- //End 고정 Header --&gt;
+
+&lt;!-- Start Pages --&gt;
+&lt;div id=&quot;pages&quot; class=&quot;container&quot;&gt;
+    &lt;section id=&quot;list&quot;&gt;&lt;/section&gt;
+    &lt;section id=&quot;add&quot;&gt;&lt;/section&gt;
+    &lt;section id=&quot;detail&quot;&gt;&lt;/section&gt;
+&lt;/div&gt;
+&lt;!-- //End Pages --&gt;
+
+&lt;!-- Start 고정 Footer --&gt;
+&lt;footer&gt;
+    &lt;div
+        class=&quot;navbar-mobile btn-group
+                    btn-group-justified navbar-fixed-bottom&quot;&gt;
+        &lt;a href=&quot;#list&quot;
+            class=&quot;btn btn-default&quot; data-transition=&quot;slide&quot;&gt;
+            &lt;span class=&quot;glyphicon glyphicon-info-sign&quot;&gt;&lt;/span&gt;
+            &lt;span class=&quot;text&quot;&gt;목록&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;a href=&quot;#detail&quot;
+            class=&quot;btn btn-default&quot; data-transition=&quot;slide&quot;
+            data-duration=&quot;1500&quot;&gt;
+            &lt;span class=&quot;glyphicon glyphicon-star&quot;&gt;&lt;/span&gt;
+            &lt;span class=&quot;text&quot;&gt;상세&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;a href=&quot;#add&quot;
+            class=&quot;btn btn-default&quot; data-transition=&quot;slide&quot;&gt;
+            &lt;span class=&quot;glyphicon glyphicon-download-alt&quot;&gt;&lt;/span&gt;
+            &lt;span class=&quot;text&quot;&gt;등록&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;/div&gt;
+&lt;/footer&gt;
+&lt;!-- //End 고정 Footer --&gt;
 </code></pre>
 
-<h3>2. 차트에 나타낼 데이터 샘플 만들기</h3>
+<p>위 코드를 반영하면 Part 1의 컨텐츠가 Part 2의 Header 고정 메뉴에 겹치는 문제가 생깁니다. 이 문제는 Part 2의 스타일 파일을 가져오면 해결할 수 있습니다. 하지만 기존 Part 1의 스타일명은 <code>part1.css</code>이고, Part 2의 스타일명은  <code>main.css</code>입니다. 스타일 명이 상이하므로
+    <code>main.css</code>와 같이 원하는 스타일명을 정하고 두 스타일을 <code>main.css</code> 파일에 합치면 겹치는 문제를 해결할 수 있습니다.</p>
 
-<p>차트를 만들기 위해 코드 1-2와 같은 <code>json</code> 데이터를 만듭니다.</p>
+<table cellspacing="0" cellpadding="0" border="0" style="border: none; width: 100%;">
+    <tbody>
+    <tr>
+        <td style="border-top: none; text-align: center;">
+            <a href="http://cornerstonewdk.github.io/cornerstone-framework-example/email/part2/html/index.html">
+                <img alt="" width="320"
+                     src="https://31.media.tumblr.com/a1ea5e411703e32a5b8b7429eb4d5350/tumblr_inline_n1xe08v03k1rc9vvo.png">
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
 
-<p><strong><em>코드 1-2</em></strong> | <a href="https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part3-incomplete/html/data/pie.json">샘플 JSON</a></p>
+<h3>3. 상세페이지에 차트 위젯 추가하기</h3>
+
+<p>템플릿 중 detail.template 파일을 아래 소스로 변경합니다.</p>
+
+<p><strong><em>코드 3-1</em></strong> | <a href="https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part4/email/part4/mvc/app/views/detail.template">detail.template</a></p>
+
+<pre><code>&lt;!-- START 샘플 상세 페이지 --&gt;
+&lt;div class=&quot;page-header&quot;&gt;
+    &lt;h1&gt;Media
+        &lt;small&gt;heading&lt;/small&gt;
+    &lt;/h1&gt;
+
+    &lt;div id=&quot;pie&quot; class=&quot;container&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- //END 샘플 상세 페이지 --&gt;
+</code></pre>
+
+<p>그리고 Part 3에서 사용한 샘플 데이터를 Part 4에 추가한 후, detail 라우터에 차트 위젯을 적용할 코드를 추가합니다.</p>
+
+<p><strong><em>코드 3-2</em></strong> | <a href="https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part4/email/part4/mvc/app/main.js">main.js</a></p>
+
+<pre><code>// main.js
+define([
+    &#39;jquery&#39;,
+    &#39;underscore&#39;,
+    &#39;backbone&#39;,
+    &#39;multipage-router&#39;,
+    &#39;widget-chart&#39;,
+    &#39;views/list&#39;,
+    &#39;views/add&#39;,
+    &#39;views/detail&#39;
+], function ($, _, Backbone, MultipageRouter,
+                Chart, ListView, AddView, DetailView) {
+    return {
+        launch: function () {
+            ...
+            &#39;detail-page&#39;: {
+                fragment: &#39;detail&#39;,
+                el: &#39;#detail&#39;,
+                render: function () {
+                    detailView.render();
+
+                    var Model = Backbone.Model.extend({
+                        url: &#39;data/pie.json&#39;
+                    });
+
+                    var chart = new Chart({
+                        el: &#39;#pie&#39;,
+                        model: new Model(),
+                        chartOptions: {
+                            chartType: &#39;pie&#39;
+                        }
+                    });
+
+                    chart.model.fetch();
+                },
+                active: &#39;active&#39;,
+                inactive: &#39;inactive&#39;
+            }
+            ...
+        }
+    };
+});
+</code></pre>
+
+<p>마지막으로 파이 차트의 크기를 정하기 위한 스타일을 main.css에 적용합니다.</p>
+
+<p><strong><em>코드 3-3</em></strong> | <a href="https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part4/email/part4/stylesheets/main.css">main.css</a></p>
+
+<pre><code>body {
+    padding-top: 60px;
+    padding-bottom: 70px;
+}
+
+...
+
+#pie {
+    width: 300px;
+    height: 300px;
+}
+...
+</code></pre>
+
+<table cellspacing="0" cellpadding="0" border="0" style="border: none; width: 100%;">
+    <tbody>
+    <tr>
+        <td style="border-top: none; text-align: center;">
+            <a href="http://cornerstonewdk.github.io/cornerstone-framework-example/email/part2/html/index.html">
+                <img alt="" width="320"
+                     src="https://31.media.tumblr.com/1c76d1686774f5c80afad99dc7dd89bb/tumblr_inline_n1xew7ex3r1rc9vvo.png">
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<h3>4. ListView 적용하기</h3>
+
+<p>3번까지 기존 예제들을 통합하는 작업을 수행했습니다. 이번 단계에서는 목록 페이지에
+    ListView를 적용할 예정입니다. ListView는 대용량 스크롤이 필요한 목록 등에 활용하기 좋은 위젯 입니다. <a href="http://cornerstone.sktelecom.com/2/livedoc/#4402">자세히 보기</a></p>
+
+<p>기존 list.template을 ListView 적용을 위해 아래 코드 4-1로 변경하고, list-item.template을 만듭니다.</p>
+
+<p><strong><em>코드 4-1</em></strong> | <a href="https://github.com/cornerstonewdk/cornerstone-framework-example/raw/email-part4/email/part4/mvc/app/views/list.template">list.template</a></p>
+
+<pre><code>&lt;!-- START 샘플 리스트 --&gt;
+    &lt;div id=&quot;listView&quot;
+        class=&quot;list-view list-group&quot;&gt;&lt;/div&gt;
+&lt;!-- //END 샘플 리스트 --&gt;
+</code></pre>
+
+<p><strong><em>코드 4-2</em></strong> | <a href="https://github.com/cornerstonewdk/cornerstone-framework-example/raw/email-part4/email/part4/mvc/app/views/list-item.template">list-item.template</a></p>
+
+<pre><code>{{_id}}. {{this.title}}
+&lt;div class=&quot;pull-right&quot;&gt;
+    &lt;span
+        class=&quot;badge&quot;&gt;{{this.published}}&lt;/span&gt;
+    &lt;span
+        class=&quot;glyphicon glyphicon-chevron-right&quot;&gt;&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>그리고 아래 샘플 데이터를 <code>pie.json</code>이 있는 <code>data/</code> 디렉토리에 추가합니다.</p>
+
+<p><strong><em>코드 4-3</em></strong> | <a href="https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part4/email/part4/mvc/data/sample-list.json">sample-list.json</a></p>
 
 <pre><code>[
     {
-        &quot;x&quot;: &quot;One&quot;,
-        &quot;y&quot;: 5
+        &quot;_id&quot;: 1,
+        &quot;title&quot;: &quot;Lompoc&quot;,
+        &quot;published&quot;: &quot;VA&quot;
     },
+    ...
     {
-        &quot;x&quot;: &quot;Two&quot;,
-        &quot;y&quot;: 2
-    },
-    {
-        &quot;x&quot;: &quot;Three&quot;,
-        &quot;y&quot;: 9
+        &quot;_id&quot;: 100,
+        &quot;title&quot;: &quot;Calabasas&quot;,
+        &quot;published&quot;: &quot;WY&quot;
     }
 ]
 </code></pre>
 
-<h3>3. 위젯 차트 적용하기</h3>
+<p>마지막으로 <code>list.js</code> 뷰를 아래 코드 4-4과 같이 변경합니다.</p>
 
-<p>기본 HTML, CSS, JS와 샘플 JSON 데이터가 준비된 상태에서 실제 위젯 차트를 적용하기 위해 아래와 같이
-    <code>javascript</code> 코드를 추가하면 <code>ajax</code>를 이용해서 샘플 데이터를 가져온 후 <a href="http://cornerstone.sktelecom.com/2/livedoc/#4405">Cornerstone 위젯 차트</a>에 가져온 데이터를 옵션에 추가해서 차트를 그릴 수 있습니다.</p>
+<p><strong><em>코드 4-4</em></strong> | <a href="https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part4/email/part4/mvc/app/views/list.js">list.js</a></p>
 
-<p><strong><em>코드 1-3</em></strong> | <a href="https://gist.githubusercontent.com/WoosubKim/4cd8a7ce9f3563912803/raw/5a263e07934c14b915c3c782e6605c260fb6a05c/chart-for-html">차트 적용 코드</a></p>
+<pre><code>// list.js
+define([
+    &#39;jquery&#39;,
+    &#39;underscore&#39;,
+    &#39;backbone&#39;,
+    &#39;widget-listview&#39;,
+    &#39;template!./list&#39;,
+    &#39;template!./list-item&#39;
+], function ($, _, Backbone, ListView, Template, ItemTemplate) {
+    return Backbone.View.extend({
+        el: &#39;#list&#39;,
+        render: function () {
+            this.$el.html(Template());
 
-<pre><code>$.ajax({
-    url: &#39;data/pie.json&#39;,
-    success: function (data) {
-        $(&#39;#pie&#39;).featuredChart({
-            chartType: &#39;pie&#39;,
-            data: data
-        });
-    }
+            // 콜렉션에 데이터를 가져올 url를 설정한다.
+            var ItemList = Backbone.Collection.extend({
+                url: &quot;data/sample-list.json&quot;,
+                model: Backbone.Model.extend({
+                    // 기본 id 속성은 id이다. id 명칭을 변경하고 싶을 때 설정
+                    idAttribute: &quot;_id&quot;
+                })
+            });
+            var itemList = new ItemList();
+
+            // 리스트 아이템 뷰 정의
+            var ItemView = Backbone.View.extend({
+                tagName: &quot;a&quot;,
+                className: &quot;list-group-item&quot;,
+                render: function () {
+                    this.$el.html(ItemTemplate(this.model.attributes));
+                }
+            });
+
+            // 리스트뷰 뷰 객체를 생성하고 el에 설정된 타겟에
+            // model객체에 담긴 데이터를 통해 리스트뷰를 그린다.
+            var listView = new ListView({
+                el: &quot;#listView&quot;,
+                collection: itemList,
+                // 사용자가 정의하는 리스트의 한 Row가 되는 SubView
+                itemView: ItemView,
+                optimization: true
+            });
+            listView.render();
+            itemList.fetch();
+
+        }
+    });
 });
 </code></pre>
 
-<h2>MVC 방식으로 차트 만들기</h2>
+<table cellspacing="0" cellpadding="0" border="0" style="border: none; width: 100%;">
+    <tbody>
+    <tr>
+        <td style="border-top: none; text-align: center;">
+            <a href="http://cornerstonewdk.github.io/cornerstone-framework-example/email/part2/html/index.html">
+                <img alt="" width="320"
+                     src="https://31.media.tumblr.com/1eb1c096f98c62d446c13e5e8aa5e846/tumblr_inline_n1y44vfd0h1rc9vvo.png">
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
 
-<h3>1. MVC 방식을 위한 라이브러리 추가하기</h3>
+<h3>5. CSS 가속을 이용한 Carousel 적용하기</h3>
 
-<p>앞에서 진행한 jQuery Plugin 방식의 <code>코드 1-1</code>, <code>코드 1-2</code>를 재활용해서 간단히 MVC 방식의 차트로 변경할 수 있습니다.
-    먼저 MVC를 사용하기 위해 jQuery Plugin 방식에서는 사용하지 않았던 <code>backbone</code>, <code>underscore</code> 라이브러리를  <code>코드 1-1</code>에 추가합니다.</p>
+<p>CSS 가속을 적용하기 위해 추가 페이지에 Carousel 위젯을 추가합니다.
+    <a href="http://cornerstone.sktelecom.com/2/livedoc/#4310">자세히 보기</a></p>
 
-<p><strong><em>코드 2-1</em></strong> | <a href="https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part3-incomplete/mvc/index.html">기본 HTML</a></p>
+<p><strong><em>코드 5-1</em></strong> | <a href="https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part4/email/part4/mvc/app/views/add.template">add.template</a></p>
 
-<pre><code>&lt;!DOCTYPE html&gt;
-    &lt;html lang=&quot;ko&quot;&gt;
-    &lt;head&gt;
-        &lt;meta charset=&quot;utf-8&quot;&gt;
-        &lt;title&gt;Cornerstone Framework Part3&lt;/title&gt;
-        &lt;meta name=&quot;viewport&quot;
-            content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-
-        &lt;!-- START 필요 스타일 --&gt;
-        &lt;link rel=&quot;stylesheet&quot;
-            href=&quot;cornerstone/bootstrap/css/bootstrap.min.css&quot;/&gt;
-        &lt;link rel=&quot;stylesheet&quot;
-            href=&quot;cornerstone/theme-white/cornerstone.css&quot;/&gt;
-        &lt;!-- //END 필요 스타일 --&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;div id=&quot;pie&quot; class=&quot;container&quot;&gt;&lt;/div&gt;
-
-        &lt;!-- START 화면전환 필요 라이브러리 --&gt;
-        &lt;script src=&quot;cornerstone/jquery/jquery-1.10.2.min.js&quot;&gt;&lt;/script&gt;
-
-        &lt;script src=&quot;cornerstone/underscore/underscore-min.js&quot;&gt;&lt;/script&gt;
-        &lt;script src=&quot;cornerstone/backbone/backbone-min.js&quot;&gt;&lt;/script&gt;
-
-        &lt;script src=&quot;cornerstone/d3/d3.v3.min.js&quot;&gt;&lt;/script&gt;
-        &lt;script src=&quot;cornerstone/nv/nv.d3.min.js&quot;&gt;&lt;/script&gt;
-        &lt;script src=&quot;cornerstone/widget-chart/widget-chart.js&quot;&gt;&lt;/script&gt;
-        &lt;!-- //END 화면전환 필요 라이브러리 --&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
+<pre><code>&lt;!-- START 캐로셀 --&gt;
+&lt;div id=&quot;carousel-example-generic&quot;
+    class=&quot;carousel slide bs-docs-carousel-example&quot;&gt;
+    &lt;ol class=&quot;carousel-indicators&quot;&gt;
+        &lt;li data-target=&quot;#carousel-example-generic&quot;
+            data-slide-to=&quot;0&quot; class=&quot;active&quot;&gt;&lt;/li&gt;
+        &lt;li data-target=&quot;#carousel-example-generic&quot;
+            data-slide-to=&quot;1&quot; class=&quot;&quot;&gt;&lt;/li&gt;
+        &lt;li data-target=&quot;#carousel-example-generic&quot;
+            data-slide-to=&quot;2&quot;&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;div class=&quot;carousel-inner&quot;&gt;
+...
+&lt;/div&gt;
+&lt;a class=&quot;left carousel-control&quot;
+    href=&quot;#carousel-example-generic&quot; data-slide=&quot;prev&quot;&gt;
+    &lt;span class=&quot;icon-prev&quot;&gt;&lt;/span&gt;
+&lt;/a&gt;
+&lt;a class=&quot;right carousel-control&quot;
+    href=&quot;#carousel-example-generic&quot; data-slide=&quot;next&quot;&gt;
+    &lt;span class=&quot;icon-next&quot;&gt;&lt;/span&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;!-- //END 캐로셀 --&gt;
 </code></pre>
 
-<h3>2. MVC 방식 위젯 차트 적용하기</h3>
+<p>그리고 Carousel 기능이 작동할 수 있도록 <code>add.js</code>뷰의 define에 <code>widget-carousel</code>을 추가합니다.</p>
 
-<p><code>코드 1-3</code>에서는 jQuery를 이용해서 ajax로 데이터를 가져온 반면 아래 코드에서는 Backbone의 모델을 이용해서
-    데이터를 가져옵니다. <code>코드 1-3</code>과 다르게 데이터는 Backbone Model를 통해서 관리되고, 차트는 Backbone View를 통해 관리됩니다. Model과 View가 분리된 상태이므로 코드를 재활용할 수 있는 이점이 있습니다.</p>
+<p><strong><em>코드 5-2</em></strong> | <a href="https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part4/email/part4/mvc/app/views/add.js">add.js</a></p>
 
-<p><strong><em>코드 2-2</em></strong> | <a href="https://gist.githubusercontent.com/WoosubKim/f642e6a381bb9b755b11/raw/903de7b54d40bc87bfb2bcaf85f8f1572f8a2480/chart-for-mvc">차트 적용 코드</a></p>
-
-<pre><code>var Model = Backbone.Model.extend({
-    url: &#39;data/pie.json&#39;
-});
-
-var chart = new Chart({
-    el: &#39;#pie&#39;,
-    model: new Model(),
-    chartOptions: {
-        chartType: &#39;pie&#39;
-    }
-});
-
-chart.model.fetch();
+<pre><code>// add.js
+define([
+    &#39;jquery&#39;,
+    &#39;underscore&#39;,
+    &#39;backbone&#39;,
+    &#39;template!./add&#39;,
+    &#39;widget-carousel&#39;
+], function ($, _, Backbone, Template) {
+...
 </code></pre>
 
-<p>이제 구현된 차트 예제를 확인해 볼 수 있습니다.
-    지금까지 가이드 한 예제 소스는 Cornerstone Framework 개발 팀에서 관리하는 Github 저장소에서 확인하실 수 있습니다.</p>
+<p>마지막으로  그 위젯의 스타일에 CSS 가속이 적용될 수 있도록 코드 5-3을 main.css에 스타일 코드를 추가합니다.
+    아래 스타일 속성 중 <code>-webkit-transform</code> 속성은 특히 모바일에서 하드웨어 가속을 이용하여 성능이 뛰어나므로 모바일에서 사용하는 것을 적극 권장합니다. </p>
+
+<p><strong><em>코드 5-3</em></strong> | <a href="https://raw.github.com/cornerstonewdk/cornerstone-framework-example/email-part4/email/part4/stylesheets/main.css">main.css</a></p>
+
+<pre><code>/* 하드웨어 가속 속성을 적용한.carousel .carousel-inner  스타일 */
+.carousel .carousel-inner .item {
+    -webkit-transition: 0.6s ease-in-out -webkit-transform;
+    -webkit-backface-visibility: hidden;
+}
+
+.carousel .carousel-inner .active {
+    -webkit-transform: translate(0%, 0%);
+}
+
+.carousel .carousel-inner .next {
+    -webkit-transform: translate(100%, 0%);
+    left: 0;
+}
+
+.carousel .carousel-inner .prev {
+    -webkit-transform: translate(-100%, 0%);
+    left: 0;
+}
+
+.carousel .carousel-inner .next.left,
+.carousel .carousel-inner.prev.right {
+    -webkit-transform: translate(0%, 0%);
+    left: 0;
+}
+
+.carousel .carousel-inner .active.left {
+    -webkit-transform: translate(-100%, 0%);
+    left: 0;
+}
+
+.carousel .carousel-inner .active.right {
+    -webkit-transform: translate(100%, 0%);
+    left: 0;
+}
+</code></pre>
+
+<p>갤럭시 S3와 같은 모바일 디바이스로 코드 5-1 적용 전/후의 Carousel 애니메이션 부드러움을 직접 체험해보시길 바랍니다.</p>
+
+<p>이제 구현된 예제를 확인해 볼 수 있습니다. 지금까지 가이드 한 예제 소스는 Cornerstone Framework 개발 팀에서 관리하는 Github 저장소에서 확인하실 수 있습니다.</p>
 
 <ul>
-    <li><a href="https://github.com/cornerstonewdk/cornerstone-framework-example/blob/email-part3-complete/html/index.html">Part3 소스</a></li>
-    <li><a href="http://cornerstonewdk.github.io/cornerstone-framework-example/email/part3/html/">Part3 미리 보기</a></li>
+    <li><a href="https://github.com/cornerstonewdk/cornerstone-framework-example/blob/email-part4-complete/mvc/index.html">Part4 소스</a></li>
+    <li><a href="http://cornerstonewdk.github.io/cornerstone-framework-example/email/part4/mvc/">Part4 미리 보기</a></li>
 </ul>
 
 <p>예제를 완성해 가면서 막히는 부분은 아래 완성 샘플과 비교해가면서 해결 점을 찾을 수 있습니다.</p>
 
 <ul>
-    <li><a href="https://github.com/cornerstonewdk/cornerstone-framework-example/archive/email-part3-complete.zip">예제 완성 소스</a></li>
+    <li><a href="https://github.com/cornerstonewdk/cornerstone-framework-example/archive/email-part4-complete.zip">예제 완성 소스</a></li>
 </ul>
 
 <h3>문의하기</h3>
