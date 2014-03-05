@@ -46,20 +46,6 @@ define([
                         el: '#detail',
                         render: function () {
                             detailView.render();
-
-                            var Model = Backbone.Model.extend({
-                                url: 'data/pie.json'
-                            });
-
-                            var chart = new Chart({
-                                el: '#pie',
-                                model: new Model(),
-                                chartOptions: {
-                                    chartType: 'pie'
-                                }
-                            });
-
-                            chart.model.fetch();
                         },
                         active: 'active',
                         inactive: 'inactive'
