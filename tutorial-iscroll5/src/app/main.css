@@ -8,7 +8,7 @@ html {
     -ms-touch-action: none;
 }
 
-body,ul,li {
+body, ul, li {
     padding: 0;
     margin: 0;
     border: 0;
@@ -37,7 +37,7 @@ iScroll5
 #scroller {
     position: absolute;
     z-index: 1;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     width: 100%;
     -webkit-transform: translateZ(0);
     -moz-transform: translateZ(0);
@@ -76,8 +76,8 @@ iScroll5
     -o-transform: translateZ(0);
     transform: translateZ(0);
     padding: 0 10px;
-    height: 40px;
-    line-height: 40px;
+    height: 72px;
+    line-height: 60px;
     border-bottom: 1px solid #ccc;
     border-top: 1px solid #fff;
     background-color: #fafafa;
@@ -88,12 +88,26 @@ iScroll5
 Custom
 */
 .navbar {
-    min-height: 41px;
+    min-height: 38px;
 }
+
 .navbar-brand {
-    padding: 10px 15px;
+    padding: 9px 15px;
 }
 
 .btn-group-justified.navbar-fixed-bottom .btn {
     padding: 0px 15px;
+}
+
+.media, .media .media {
+    margin-top: 0;
+}
+
+.media img {
+    width: 72px;
+    height: 72px;
+}
+
+.media-list {
+    min-height: 600px;
 }

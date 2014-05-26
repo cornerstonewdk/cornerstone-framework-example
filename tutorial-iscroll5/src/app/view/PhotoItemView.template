@@ -1,0 +1,6 @@
+<a class="pull-left" href="#">
+    <img class="media-object" src="{{imageUrl}}" alt="{{title}}">
+</a>
+<div class="media-body">
+    <h4 class="media-heading">{{title}}</h4>
+</div>
