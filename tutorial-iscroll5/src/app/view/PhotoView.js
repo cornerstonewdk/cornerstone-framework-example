@@ -15,40 +15,32 @@ define([
 
       // iScroll 5 Infinite Scrolling 적용
       setTimeout(function () {
-        var myScroll = new IScroll('#wrapper', {
+        new IScroll('#wrapper', {
           mouseWheel: true,
+          mouseWheelSpeed: 100, // 휠마우스 속도 증가
+          deceleration: 0.01, // flickr 데이터의 한계로 인해 cacheSize을 1000이상 줄 수 없으므로 감속 수치를 증가시킨다.
           infiniteElements: '#scroller .item',
           infiniteLimit: 1000,
           dataset: requestData,
           dataFiller: updateContent,
-          cacheSize: view.collection.defaults.data.per_page / 2
+          cacheSize: 500
         });
 
-        /**
-         * 일반 Pagination과 다른 구조
-         * @type {number}
-         */
-        var prevPage = 1;
         function requestData(start, count) {
           var self = this;
-          var page = Math.floor(start / count);
-          page = page <= 0 ? 1 : page + 1;
-
-          if(prevPage != page) {
-            view.collection.defaults.data.page = page;
-            /**
-             * 대이터를 가져온 후 Cache 업데이트가 될 때 스크롤
-             */
-            self.disable();
-            view.collection.fetch({
-              success: function (data) {
-                data = data.toJSON();
-                self.updateCache((page - 1) * count, data);
-                self.enable();
-              }
-            });
-            prevPage = page;
-          }
+          view.collection.defaults.data.page = Math.ceil(start / count) + 1;
+          /**
+           * 가져온 데이터를 collection 계속 유지하기 위해 update, remove 옵션을 추가한다.
+           */
+          view.collection.fetch({
+            update: true,
+            remove: false,
+            success: function (data) {
+              data = data.toJSON();
+              console.log(start, data);
+              self.updateCache(start, data);
+            }
+          });
         }
 
         function updateContent(el, data) {

@@ -1,7 +1,7 @@
 define([
   'backbone',
   'model/Photo',
-  'template!view/PhotoItemView',
+  'template!view/PhotoItemView'
 ], function (Backbone, Photo, template) {
   return Backbone.View.extend({
     render: function () {

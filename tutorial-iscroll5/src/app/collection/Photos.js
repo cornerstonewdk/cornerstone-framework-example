@@ -7,13 +7,13 @@ define([ 'backbone' ], function (Backbone) {
     defaults: {
       data: {
         format: 'json',
-        per_page: 100,
+        per_page: 500,
         page: 1
       },
       dataType: 'jsonp',
       jsonpCallback: 'jsonFlickrApi'
     },
-    url: 'https://api.flickr.com/services/rest/?method=flickr.interestingness.getList&api_key=4a2d98f5823095fa3b5c970518bdec8a',
+    url: 'https://api.flickr.com/services/rest/?method=flickr.photos.getRecent&api_key=4a2d98f5823095fa3b5c970518bdec8a',
     parse: function (response) {
       return response.photos.photo;
     },
