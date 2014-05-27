@@ -37,7 +37,6 @@ define([
             remove: false,
             success: function (data) {
               data = data.toJSON();
-              console.log(start, data);
               self.updateCache(start, data);
             }
           });
