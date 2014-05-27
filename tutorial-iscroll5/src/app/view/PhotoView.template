@@ -1,0 +1,26 @@
+<div id="wrapper">
+    <div id="scroller">
+        <ul class="media-list">
+            <li class="item media">Row 1</li>
+            <li class="item media">Row 2</li>
+            <li class="item media">Row 3</li>
+            <li class="item media">Row 4</li>
+            <li class="item media">Row 5</li>
+            <li class="item media">Row 6</li>
+            <li class="item media">Row 7</li>
+            <li class="item media">Row 8</li>
+            <li class="item media">Row 9</li>
+            <li class="item media">Row 10</li>
+            <li class="item media">Row 11</li>
+            <li class="item media">Row 12</li>
+            <li class="item media">Row 13</li>
+            <li class="item media">Row 14</li>
+            <li class="item media">Row 15</li>
+            <li class="item media">Row 16</li>
+            <li class="item media">Row 17</li>
+            <li class="item media">Row 18</li>
+            <li class="item media">Row 19</li>
+            <li class="item media">Row 20</li>
+        </ul>
+    </div>
+</div>

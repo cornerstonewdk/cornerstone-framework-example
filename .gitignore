@@ -1,2 +1,4 @@
 email/part1/email.html
+node_modules/
+dist/
 .idea/

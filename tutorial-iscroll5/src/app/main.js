@@ -3,19 +3,27 @@
  * 애플리케이션 메인
  */
 define([
-  'view/page1', 'backbone', 'multipage-router', 'bootstrap', 'style!main',
-], function (Page1View, Backbone, MultipageRouter) {
+  'backbone',
+  'multipage-router',
+  'collection/Photos',
+  'model/Photo',
+  'view/PhotoView',
+  'bootstrap',
+  'style!main'
+], function (Backbone, MultipageRouter, Photos, Photo, PhotoView) {
   return {
     launch: function () {
-
       // Router
       var MainRouter = MultipageRouter.extend({
         pages: {
           'page1': {
-            fragment: [ '', 'page1' ],
-            el: '#page1',
+            fragment: [ '', 'photoView' ],
+            el: '#photoView',
             render: function () {
-              new Page1View().render();
+              var photoView = new PhotoView({
+                collection: Photos
+              });
+              photoView.render();
             }
           },
           'default': {
@@ -29,6 +37,10 @@ define([
 
       new MainRouter();
       Backbone.history.start();
+
+      window.App = {};
+      App.Photos = Photos;
+      App.Photo = Photo;
     }
   };
 });
