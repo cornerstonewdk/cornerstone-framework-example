@@ -2,7 +2,7 @@
  * JSONP 기능 제공 Backbone Plugin 제작 필요
  */
 
-define([ 'backbone', 'model/Photo' ], function (Backbone, Photo) {
+define([ 'backbone' ], function (Backbone) {
   var Collection = Backbone.Collection.extend({
     defaults: {
       data: {

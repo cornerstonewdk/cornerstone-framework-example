@@ -32,9 +32,11 @@ define([
           },
           'baas': {
             fragment: [ 'baas' ],
-            el: '#baasView',
+            el: '#photoView',
             render: function () {
               console.log('baas');
+
+              // Ajax 헤더 설정
               $.ajaxSetup({
                 headers: {
                   'TDCProjectKey': 'f7e574a7-4647-4c4c-b3f0-66c479f1f724'
