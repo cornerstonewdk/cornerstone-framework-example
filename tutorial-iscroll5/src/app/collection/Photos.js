@@ -23,5 +23,23 @@ define([ 'backbone' ], function (Backbone) {
     }
   });
 
-  return new Collection();
+  var collection = new Collection();
+
+  collection.requestData = function (start, count) {
+    var self = this;
+    collection.defaults.data.page = Math.ceil(start / count) + 1;
+    /**
+     * 가져온 데이터를 collection 계속 유지하기 위해 update, remove 옵션을 추가한다.
+     */
+    collection.fetch({
+      update: true,
+      remove: false,
+      success: function (data) {
+        data = data.toJSON();
+        self.updateCache(start, data);
+      }
+    });
+  };
+
+  return collection;
 });
