@@ -1,7 +1,3 @@
-/**
- * JSONP 기능 제공 Backbone Plugin 제작 필요
- */
-
 define([ 'backbone' ], function (Backbone) {
   var Collection = Backbone.Collection.extend({
     defaults: {
