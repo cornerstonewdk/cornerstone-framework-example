@@ -22,7 +22,7 @@ define([
           infiniteLimit: 1000,
           dataset: self.collection.requestData,
           dataFiller: updateContent,
-          cacheSize: 500
+          cacheSize: 200
         });
 
         function updateContent(el, data) {
